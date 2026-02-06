@@ -49,6 +49,10 @@ I build data-driven products across full-stack web, data pipelines, and applied 
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=Kuldeep2822k&theme=github-compact" />
 </p>
 
+<p>
+  <img src="https://github.com/Kuldeep2822k/Kuldeep2822k/blob/main/github-metrics.svg" alt="Metrics" width="100%">
+</p>
+
 ---
 
 ## How I like to build

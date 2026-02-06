@@ -21,6 +21,7 @@ jobs:
           template: classic
           base: header, activity, community, repositories, metadata
           config_timezone: Asia/Kolkata
+          config_display: large
           
           # Notable contributions (The "Contributed to" section)
           plugin_notable: yes

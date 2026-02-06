@@ -50,7 +50,7 @@ I build data-driven products across full-stack web, data pipelines, and applied 
 </p>
 
 <p>
-  <img src="https://github.com/Kuldeep2822k/Kuldeep2822k/blob/main/github-metrics.svg" alt="Metrics" width="100%">
+  <img src="https://github.com/Kuldeep2822k/Kuldeep2822k/blob/main/github-metrics.svg" alt="Metrics">
 </p>
 
 ---

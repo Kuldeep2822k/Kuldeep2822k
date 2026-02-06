@@ -37,12 +37,12 @@ I build data-driven products across full-stack web, data pipelines, and applied 
 ## GitHub Activity & Metrics
 
 <p>
-  <img height="160" src="https://github-readme-stats.vercel.app/api?username=Kuldeep2822k&show_icons=true&hide_title=true&include_all_commits=true&rank_icon=github&theme=transparent" />
-  <img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Kuldeep2822k&layout=compact&theme=transparent" />
+  <img height="160" src="https://github-readme-stats-plus-theta.vercel.app/api?username=Kuldeep2822k&show_icons=true&hide_title=true&include_all_commits=true&rank_icon=github&theme=transparent" />
+  <img height="160" src="https://github-readme-stats-plus-theta.vercel.app/api/top-langs/?username=Kuldeep2822k&layout=compact&theme=transparent" />
 </p>
 
 <p>
-  <img height="170" src="https://streak-stats.demolab.com?user=Kuldeep2822k&theme=transparent" />
+  <img height="170" src="https://github-readme-streak-stats-eight.vercel.app/?user=Kuldeep2822k&theme=transparent" />
 </p>
 
 <p>

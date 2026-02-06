@@ -15,8 +15,6 @@ jobs:
       - uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
-          debug: yes
-          debug_print: yes
 
           # Options
           user: Kuldeep2822k
@@ -37,4 +35,20 @@ jobs:
           plugin_habits: no
           
           # Achievements (Badges)
+          plugin_achievements: no
+
+      - uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+
+          user: Kuldeep2822k
+          template: classic
+          filename: github-metrics-activity.svg
+          base: activity, community
+          config_timezone: Asia/Kolkata
+          config_display: large
+
+          plugin_notable: no
+          plugin_activity: no
+          plugin_habits: no
           plugin_achievements: no

@@ -49,6 +49,10 @@ I build data-driven products across **full-stack web**, **data pipelines**, and 
 </p>
 
 <p align="center">
+  <img src="https://github.com/Kuldeep2822k/Kuldeep2822k/blob/main/github-metrics-activity.svg" width="100%" alt="Activity Overview" />
+</p>
+
+<p align="center">
   <img src="https://github.com/Kuldeep2822k/Kuldeep2822k/blob/main/github-metrics.svg" width="100%" alt="Advanced Metrics" />
 </p>
 

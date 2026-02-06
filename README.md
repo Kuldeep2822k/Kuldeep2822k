@@ -10,18 +10,16 @@ I build data-driven products across full-stack web, data pipelines, and applied 
 
 ## What I work with
 
-**Languages**: Python • TypeScript • JavaScript • SQL
+**Languages**: TypeScript • JavaScript • SQL
 
 **Web**: React • Node.js • Express
 
 **APIs**: FastAPI
 
-**Data/ML**: pandas • NumPy • scikit-learn • TensorFlow
-
 **Databases/Infra**: PostgreSQL • (PostGIS) • Redis • Docker
 
 <p>
-  <img src="https://skillicons.dev/icons?i=python,js,ts,react,nodejs,postgres,redis,docker,git,github" />
+  <img src="https://skillicons.dev/icons?i=,js,ts,react,nodejs,postgres,redis,docker,git,github" />
 </p>
 
 ---

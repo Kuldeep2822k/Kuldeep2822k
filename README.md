@@ -65,7 +65,7 @@ I build data-driven products across **full-stack web**, **data pipelines**, and 
   <a href="https://github.com/Kuldeep2822k">
     <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" />
   </a>
-  <a href="mailto:kuldeep2822k@gmail.com">
+  <a href="mailto:kuldeep2822k@duck.com">
     <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
   </a>
 </p>

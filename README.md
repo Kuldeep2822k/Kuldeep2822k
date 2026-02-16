@@ -40,6 +40,7 @@ I build data-driven products across **full-stack web**, **data pipelines**, and 
   <img src="https://github-readme-stats-plus-theta.vercel.app/api/top-langs/?username=Kuldeep2822k&layout=compact&theme=transparent" height="160" alt="Languages" />
 </p>
 
+---
 <p align="center">
   <img src="https://github-readme-streak-stats-eight.vercel.app/?user=Kuldeep2822k&theme=transparent" height="170" alt="Streak" />
 </p>

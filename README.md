@@ -1,14 +1,14 @@
-# Hi, I’m Kuldeep Kumar (Kuldeep2822k) 👋
+# Hi, I’m Kuldeep Kumar
 
 I build data-driven products across **full-stack web**, **data pipelines**, and **applied ML**—focusing on real-world problems where good data and UX matter.
 
-- 🔭 I’m currently building **[Aqua‑AI](https://github.com/Kuldeep2822k/aqua-ai)**: an AI-powered water quality monitoring platform for India.
-- 🤖 I’ve built **[Content Studio Agent](https://github.com/Kuldeep2822k/content-studio-agent)**: an AI writing workflow with memory of user style.
-- ⚡ I value **clean APIs**, **reliable data flows**, and **performance**.
+- I’m currently building **[Aqua‑AI](https://github.com/Kuldeep2822k/aqua-ai)**: an AI-powered water quality monitoring platform for India.
+- I’ve built **[Content Studio Agent](https://github.com/Kuldeep2822k/content-studio-agent)**: an AI writing workflow with memory of user style.
+- I value **clean APIs**, **reliable data flows**, and **performance**.
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 <p align="left">
   <a href="https://skillicons.dev">
@@ -23,7 +23,7 @@ I build data-driven products across **full-stack web**, **data pipelines**, and 
 
 ---
 
-## 🚀 Featured Projects
+## Featured Projects
 
 | Project                                                                          | Description                                                                                           | Tech Stack                                                                                                                                                                                                |
 | :------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -40,6 +40,7 @@ I build data-driven products across **full-stack web**, **data pipelines**, and 
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Kuldeep2822k&layout=compact&theme=transparent" height="160" alt="Languages" />
 </p>
 
+---
 <p align="center">
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=Kuldeep2822k&theme=transparent" height="170" alt="Streak" />
 </p>
@@ -59,7 +60,6 @@ I build data-driven products across **full-stack web**, **data pipelines**, and 
 ---
 
 ## ⚡ Philosophy
-
 - **End-to-end mindset**: Taking features from ingestion → storage → API → UI.
 - **Quality loop**: Automated checks (tests/scans) and iterative refactors.
 - **Documentation**: Clear READMEs make projects accessible.

@@ -25,23 +25,23 @@ I build data-driven products across **full-stack web**, **data pipelines**, and 
 
 ## 🚀 Featured Projects
 
-| Project | Description | Tech Stack |
-| :--- | :--- | :--- |
-| **[Aqua‑AI](https://github.com/Kuldeep2822k/aqua-ai)** | Platform ingesting public water-quality data to visualize insights on a map/dashboard with analytics. | ![React](https://img.shields.io/badge/-React-black?logo=react) ![Node](https://img.shields.io/badge/-Node-black?logo=nodedotjs) ![Postgres](https://img.shields.io/badge/-Postgres-black?logo=postgresql) |
-| **[Content Studio Agent](https://github.com/Kuldeep2822k/content-studio-agent)** | AI writing agent with end-to-end workflow (research → outline → draft) and style memory. | ![Python](https://img.shields.io/badge/-Python-black?logo=python) ![FastAPI](https://img.shields.io/badge/-FastAPI-black?logo=fastapi) ![AI](https://img.shields.io/badge/-AI-black?logo=openai) |
-| **[Indian Meal Calculator](https://github.com/Kuldeep2822k/code)** | Nutrition planner for Indian foods with barcode scanning and free API search. | ![JS](https://img.shields.io/badge/-JS-black?logo=javascript) ![HTML](https://img.shields.io/badge/-HTML-black?logo=html5) |
+| Project                                                                          | Description                                                                                           | Tech Stack                                                                                                                                                                                                |
+| :------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **[Aqua‑AI](https://github.com/Kuldeep2822k/aqua-ai)**                           | Platform ingesting public water-quality data to visualize insights on a map/dashboard with analytics. | ![React](https://img.shields.io/badge/-React-black?logo=react) ![Node](https://img.shields.io/badge/-Node-black?logo=nodedotjs) ![Postgres](https://img.shields.io/badge/-Postgres-black?logo=postgresql) |
+| **[Content Studio Agent](https://github.com/Kuldeep2822k/content-studio-agent)** | AI writing agent with end-to-end workflow (research → outline → draft) and style memory.              | ![Python](https://img.shields.io/badge/-Python-black?logo=python) ![FastAPI](https://img.shields.io/badge/-FastAPI-black?logo=fastapi) ![AI](https://img.shields.io/badge/-AI-black?logo=openai)          |
+| **[Indian Meal Calculator](https://github.com/Kuldeep2822k/code)**               | Nutrition planner for Indian foods with barcode scanning and free API search.                         | ![JS](https://img.shields.io/badge/-JS-black?logo=javascript) ![HTML](https://img.shields.io/badge/-HTML-black?logo=html5)                                                                                |
 
 ---
 
 ## 📊 GitHub Stats
 
 <p align="center">
-  <img src="https://github-readme-stats-plus-theta.vercel.app/api?username=Kuldeep2822k&show_icons=true&hide_title=true&include_all_commits=true&rank_icon=github&theme=transparent" height="160" alt="Stats" />
-  <img src="https://github-readme-stats-plus-theta.vercel.app/api/top-langs/?username=Kuldeep2822k&layout=compact&theme=transparent" height="160" alt="Languages" />
+  <img src="https://github-readme-stats.vercel.app/api?username=Kuldeep2822k&show_icons=true&hide_title=true&include_all_commits=true&rank_icon=github&theme=transparent" height="160" alt="Stats" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Kuldeep2822k&layout=compact&theme=transparent" height="160" alt="Languages" />
 </p>
 
 <p align="center">
-  <img src="https://github-readme-streak-stats-eight.vercel.app/?user=Kuldeep2822k&theme=transparent" height="170" alt="Streak" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Kuldeep2822k&theme=transparent" height="170" alt="Streak" />
 </p>
 
 <p align="center">
@@ -59,6 +59,7 @@ I build data-driven products across **full-stack web**, **data pipelines**, and 
 ---
 
 ## ⚡ Philosophy
+
 - **End-to-end mindset**: Taking features from ingestion → storage → API → UI.
 - **Quality loop**: Automated checks (tests/scans) and iterative refactors.
 - **Documentation**: Clear READMEs make projects accessible.
@@ -73,4 +74,3 @@ I build data-driven products across **full-stack web**, **data pipelines**, and 
     <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
   </a>
 </p>
-

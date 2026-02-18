@@ -38,10 +38,6 @@ I build data-driven products across **full-stack web**, **data pipelines**, and 
 ---
 
 <p align="center">
-  <img src="https://github.com/Kuldeep2822k/Kuldeep2822k/blob/main/github-metrics-stats.svg" width="100%" alt="Stats Overview" />
-</p>
-
-<p align="center">
   <img src="https://github.com/Kuldeep2822k/Kuldeep2822k/blob/main/github-metrics-languages.svg" width="100%" alt="Top Languages" />
 </p>
 

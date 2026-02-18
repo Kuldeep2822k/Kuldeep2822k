@@ -8,7 +8,7 @@ I build data-driven products across **full-stack web**, **data pipelines**, and 
 
 ---
 
-##  Tech Stack
+## Tech Stack
 
 <p align="left">
   <a href="https://skillicons.dev">
@@ -35,12 +35,16 @@ I build data-driven products across **full-stack web**, **data pipelines**, and 
 
 ## 📊 GitHub Stats
 
+---
+
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Kuldeep2822k&show_icons=true&hide_title=true&include_all_commits=true&rank_icon=github&theme=transparent" height="160" alt="Stats" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Kuldeep2822k&layout=compact&theme=transparent" height="160" alt="Languages" />
+  <img src="https://github.com/Kuldeep2822k/Kuldeep2822k/blob/main/github-metrics-stats.svg" width="100%" alt="Stats Overview" />
 </p>
 
----
+<p align="center">
+  <img src="https://github.com/Kuldeep2822k/Kuldeep2822k/blob/main/github-metrics-languages.svg" width="100%" alt="Top Languages" />
+</p>
+
 <p align="center">
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=Kuldeep2822k&theme=transparent" height="170" alt="Streak" />
 </p>
@@ -60,6 +64,7 @@ I build data-driven products across **full-stack web**, **data pipelines**, and 
 ---
 
 ## ⚡ Philosophy
+
 - **End-to-end mindset**: Taking features from ingestion → storage → API → UI.
 - **Quality loop**: Automated checks (tests/scans) and iterative refactors.
 - **Documentation**: Clear READMEs make projects accessible.

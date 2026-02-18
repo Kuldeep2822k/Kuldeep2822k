@@ -1,11 +1,11 @@
 name: Metrics
 on:
   # Schedule daily updates
-  schedule: [{cron: "0 0 * * *"}]
+  schedule: [{ cron: "0 0 * * *" }]
   # (Optional) Run workflow manually
   workflow_dispatch:
   # (Optional) Run workflow when pushing on master/main
-  push: {branches: ["master", "main"]}
+  push: { branches: ["master", "main"] }
 jobs:
   github-metrics:
     runs-on: ubuntu-latest
@@ -22,19 +22,52 @@ jobs:
           base: header, activity, community, repositories, metadata
           config_timezone: Asia/Kolkata
           config_display: large
-          
+
           # Notable contributions (The "Contributed to" section)
           plugin_notable: yes
           plugin_notable_from: organization
           plugin_notable_types: commit
-          
+
           # Activity (The radar chart and activity breakdown)
           plugin_activity: no
-          
+
           # Habits (Coding habits)
           plugin_habits: no
-          
+
           # Achievements (Badges)
+          plugin_achievements: no
+
+      - uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+
+          user: Kuldeep2822k
+          template: classic
+          filename: github-metrics-stats.svg
+          base: header, repositories, metadata
+          config_timezone: Asia/Kolkata
+          config_display: large
+
+          plugin_notable: no
+          plugin_activity: no
+          plugin_habits: no
+          plugin_achievements: no
+
+      - uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+
+          user: Kuldeep2822k
+          template: classic
+          filename: github-metrics-languages.svg
+          base: header
+          config_timezone: Asia/Kolkata
+          config_display: large
+
+          plugin_languages: yes
+          plugin_notable: no
+          plugin_activity: no
+          plugin_habits: no
           plugin_achievements: no
 
       - uses: lowlighter/metrics@latest

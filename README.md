@@ -1,6 +1,6 @@
 # Hi, I’m Kuldeep Kumar
 
-I build data-driven products across **full-stack web**, **data pipelines**, and **applied ML**—focusing on real-world problems where good data and UX matter.
+I build data-driven products across **full-stack web**, **data pipelines**, and **dev ops**—focusing on real-world problems where good data and UX matter.
 
 - I’m currently building **[Aqua‑AI](https://github.com/Kuldeep2822k/aqua-ai)**: an AI-powered water quality monitoring platform for India.
 - I’ve built **[Content Studio Agent](https://github.com/Kuldeep2822k/content-studio-agent)**: an AI writing workflow with memory of user style.

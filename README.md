@@ -46,10 +46,6 @@ I build data-driven products across **full-stack web**, **data pipelines**, and 
 </p>
 
 <p align="center">
-  
-  ![](https://github-readme-stats.vercel.app/api?username=kuldeep2822k&theme=dark&hide_border=false&include_all_commits=true&count_private=false)<br/>
-</p>
-<p align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=Kuldeep2822k&theme=github-compact" width="100%" alt="Activity Graph" />
 </p>
 

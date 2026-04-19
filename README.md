@@ -111,6 +111,75 @@ I build data-driven products across **full-stack web**, **data pipelines**, and 
 ## ⏱️ WakaTime Coding Stats
 
 <!--START_SECTION:waka-->
+![Code Time](http://img.shields.io/badge/Code%20Time-0%20secs-blue?style=flat)
+
+![Profile Views](http://img.shields.io/badge/Profile%20Views-18-blue?style=flat)
+
+**🐱 My GitHub Data** 
+
+> 📦 5.4 kB Used in GitHub's Storage 
+ > 
+> 🏆 834 Contributions in the Year 2026
+ > 
+> 💼 Opted to Hire
+ > 
+> 📜 13 Public Repositories 
+ > 
+> 🔑 4 Private Repositories 
+ > 
+**I'm a Night 🦉** 
+
+```text
+🌞 Morning                1510 commits        ██░░░░░░░░░░░░░░░░░░░░░░░   09.63 % 
+🌆 Daytime                4769 commits        ████████░░░░░░░░░░░░░░░░░   30.41 % 
+🌃 Evening                6874 commits        ███████████░░░░░░░░░░░░░░   43.83 % 
+🌙 Night                  2529 commits        ████░░░░░░░░░░░░░░░░░░░░░   16.13 % 
+```
+📅 **I'm Most Productive on Thursday** 
+
+```text
+Monday                   1123 commits        ██░░░░░░░░░░░░░░░░░░░░░░░   07.16 % 
+Tuesday                  2074 commits        ███░░░░░░░░░░░░░░░░░░░░░░   13.23 % 
+Wednesday                2943 commits        █████░░░░░░░░░░░░░░░░░░░░   18.77 % 
+Thursday                 3553 commits        ██████░░░░░░░░░░░░░░░░░░░   22.66 % 
+Friday                   1386 commits        ██░░░░░░░░░░░░░░░░░░░░░░░   08.84 % 
+Saturday                 2940 commits        █████░░░░░░░░░░░░░░░░░░░░   18.75 % 
+Sunday                   1663 commits        ███░░░░░░░░░░░░░░░░░░░░░░   10.60 % 
+```
+
+
+📊 **This Week I Spent My Time On** 
+
+```text
+🕑︎ Time Zone: Asia/Kolkata
+
+💬 Programming Languages: 
+No Activity Tracked This Week
+
+🔥 Editors: 
+No Activity Tracked This Week
+
+🐱‍💻 Projects: 
+No Activity Tracked This Week
+
+💻 Operating System: 
+No Activity Tracked This Week
+```
+
+**I Mostly Code in TypeScript** 
+
+```text
+TypeScript               7 repos             █████████████░░░░░░░░░░░░   53.85 % 
+JavaScript               2 repos             ████░░░░░░░░░░░░░░░░░░░░░   15.38 % 
+Python                   1 repo              ██░░░░░░░░░░░░░░░░░░░░░░░   07.69 % 
+C++                      1 repo              ██░░░░░░░░░░░░░░░░░░░░░░░   07.69 % 
+Go                       1 repo              ██░░░░░░░░░░░░░░░░░░░░░░░   07.69 % 
+```
+
+
+
+
+ Last Updated on 19/04/2026 20:24:48 UTC
 <!--END_SECTION:waka-->
 
 ---

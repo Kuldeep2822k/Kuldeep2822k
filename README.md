@@ -75,7 +75,7 @@ I build data-driven products across **full-stack web**, **data pipelines**, and 
 ## 🏆 Trophies
 
 <p align="center">
-  <img src="https://github.com/Kuldeep2822k/Kuldeep2822k/blob/main/github-trophies.svg" alt="GitHub Trophies" />
+  <img src="https://raw.githubusercontent.com/Kuldeep2822k/Kuldeep2822k/main/github-trophies.svg" alt="GitHub Trophies" />
 </p>
 
 ---
@@ -84,9 +84,9 @@ I build data-driven products across **full-stack web**, **data pipelines**, and 
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Kuldeep2822k/Kuldeep2822k/blob/main/github-metrics-languages.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="https://github.com/Kuldeep2822k/Kuldeep2822k/blob/main/github-metrics-languages.svg" />
-    <img src="https://github.com/Kuldeep2822k/Kuldeep2822k/blob/main/github-metrics-languages.svg" width="100%" alt="Top Languages" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Kuldeep2822k/Kuldeep2822k/main/github-metrics-languages.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Kuldeep2822k/Kuldeep2822k/main/github-metrics-languages.svg" />
+    <img src="https://raw.githubusercontent.com/Kuldeep2822k/Kuldeep2822k/main/github-metrics-languages.svg" width="100%" alt="Top Languages" />
   </picture>
 </p>
 
@@ -99,11 +99,11 @@ I build data-driven products across **full-stack web**, **data pipelines**, and 
 </p>
 
 <p align="center">
-  <img src="https://github.com/Kuldeep2822k/Kuldeep2822k/blob/main/github-metrics-activity.svg" width="100%" alt="Activity Overview" />
+  <img src="https://raw.githubusercontent.com/Kuldeep2822k/Kuldeep2822k/main/github-metrics-activity.svg" width="100%" alt="Activity Overview" />
 </p>
 
 <p align="center">
-  <img src="https://github.com/Kuldeep2822k/Kuldeep2822k/blob/main/github-metrics.svg" width="100%" alt="Advanced Metrics" />
+  <img src="https://raw.githubusercontent.com/Kuldeep2822k/Kuldeep2822k/main/github-metrics.svg" width="100%" alt="Advanced Metrics" />
 </p>
 
 ---

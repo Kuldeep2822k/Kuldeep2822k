@@ -9,6 +9,9 @@ on:
 concurrency:
   group: readme-update
   cancel-in-progress: false
+concurrency:
+  group: readme-update
+  cancel-in-progress: false
 
 jobs:
   update-readme:

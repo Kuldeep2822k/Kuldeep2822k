@@ -22,11 +22,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Fetch trophies SVG
-        run: |
-          curl -sSf \
-            "https://github-profile-trophy.vercel.app/?username=Kuldeep2822k&theme=onedark&no-frame=true&row=1&column=7&margin-w=8" \
-            -o github-trophies.svg
+      - name: Generate trophies SVG
+        uses: ryo-ma/github-profile-trophy@v1.0
+        with:
+          username: Kuldeep2822k
+          output_path: github-trophies.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+          theme: onedark
 
       - name: Commit and push
         run: |

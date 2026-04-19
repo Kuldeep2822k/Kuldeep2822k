@@ -17,7 +17,7 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: jamesgeorge007/github-activity-readme@v0.0.5
+      - uses: jamesgeorge007/github-activity-readme@v0.5.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:

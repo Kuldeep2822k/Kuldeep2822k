@@ -75,7 +75,7 @@ I build data-driven products across **full-stack web**, **data pipelines**, and 
 ## 🏆 Trophies
 
 <p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=Kuldeep2822k&theme=onedark&no-frame=true&row=1&column=7&margin-w=8" alt="GitHub Trophies" />
+  <img src="https://github.com/Kuldeep2822k/Kuldeep2822k/blob/main/github-trophies.svg" alt="GitHub Trophies" />
 </p>
 
 ---

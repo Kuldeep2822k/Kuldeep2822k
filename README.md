@@ -24,10 +24,10 @@ I build data-driven products across **full-stack web**, **data pipelines**, and 
 
 ## 🌱 What I'm Learning
 
-- **PostGIS** spatial queries & geospatial data analysis
-- **LangGraph** multi-agent orchestration
-- **Kubernetes** container orchestration & scaling
-- **Rust** for high-performance systems programming
+- **Google Cloud / AWS** — cloud infrastructure, IAM, networking & managed services
+- **Kubernetes** — container orchestration, Helm, and cluster scaling
+- **Terraform / IaC** — automating infrastructure provisioning and deployments
+- **CI/CD pipelines** — GitHub Actions, Cloud Build, and DevOps automation workflows
 
 ---
 
@@ -217,13 +217,10 @@ I actively contribute to and build open-source tools, especially in the **AI/dat
 ---
 
 <p align="center">
-  <a href="https://github.com/Kuldeep2822k">
-    <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" />
-  </a>
   <a href="mailto:kuldeep2822k@duck.com">
     <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
   </a>
-  <a href="https://www.linkedin.com/in/kuldeep2822k">
+  <a href="https://www.linkedin.com/in/kuldeep-kumar-90bb0536a/">
     <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
   </a>
 </p>

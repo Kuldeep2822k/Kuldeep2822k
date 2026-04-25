@@ -1,0 +1,305 @@
+from __future__ import annotations
+
+import base64
+import json
+import os
+import urllib.error
+import urllib.parse
+import urllib.request
+from collections import defaultdict
+from datetime import date, datetime, timedelta, timezone
+from pathlib import Path
+from typing import Any
+
+try:
+    from zoneinfo import ZoneInfo
+except ImportError:  # pragma: no cover
+    ZoneInfo = None  # type: ignore[assignment]
+
+
+README_PATH = Path(__file__).resolve().parents[2] / "README.md"
+START_MARKER = "<!--START_SECTION:waka-->"
+END_MARKER = "<!--END_SECTION:waka-->"
+WAKA_BASE = "https://wakatime.com/api/v1"
+GITHUB_BASE = "https://api.github.com"
+
+
+def _auth_header(api_key: str) -> dict[str, str]:
+    token = base64.b64encode(f"{api_key}:".encode("utf-8")).decode("ascii")
+    return {"Authorization": f"Basic {token}", "Content-Type": "application/json"}
+
+
+def _fetch_json(url: str, headers: dict[str, str]) -> Any:
+    request = urllib.request.Request(url, headers=headers)
+    with urllib.request.urlopen(request, timeout=30) as response:
+        return json.loads(response.read().decode("utf-8"))
+
+
+def fetch_waka_json(path: str, api_key: str, params: dict[str, str] | None = None) -> Any:
+    query = f"?{urllib.parse.urlencode(params)}" if params else ""
+    return _fetch_json(f"{WAKA_BASE}{path}{query}", _auth_header(api_key))
+
+
+def fetch_github_json(path: str, token: str, params: dict[str, str] | None = None) -> Any:
+    query = f"?{urllib.parse.urlencode(params)}" if params else ""
+    headers = {
+        "Authorization": f"Bearer {token}",
+        "Accept": "application/vnd.github+json",
+        "X-GitHub-Api-Version": "2022-11-28",
+    }
+    return _fetch_json(f"{GITHUB_BASE}{path}{query}", headers)
+
+
+def fetch_all_repos(token: str) -> list[dict[str, Any]]:
+    page = 1
+    repos: list[dict[str, Any]] = []
+    while True:
+        batch = fetch_github_json(
+            "/user/repos",
+            token,
+            {"per_page": "100", "page": str(page), "type": "owner", "sort": "updated"},
+        )
+        if not batch:
+            break
+        repos.extend(batch)
+        if len(batch) < 100:
+            break
+        page += 1
+    return repos
+
+
+def safe_text(stats: dict[str, Any], key: str, fallback: str) -> str:
+    value = stats.get(key)
+    if value in (None, ""):
+        return fallback
+    return str(value)
+
+
+def percent_bar(percent: float) -> str:
+    filled = max(0, min(10, round(percent / 10)))
+    return "▰" * filled + "▱" * (10 - filled)
+
+
+def two_col(left: str, right: str, width: int = 74) -> str:
+    return f"{left:<{width}} | {right}" if right else left
+
+
+def fmt_hours(seconds: float) -> str:
+    return f"{seconds / 3600:.2f} h"
+
+
+def build_metrics_block() -> str:
+    waka_key = os.environ["WAKATIME_API_KEY"].strip()
+    gh_token = os.environ["GH_TOKEN"].strip()
+    tz_name = os.environ.get("DISPLAY_TIMEZONE", "UTC")
+    tz = ZoneInfo(tz_name) if ZoneInfo else timezone.utc
+
+    end_day = datetime.now(timezone.utc).date()
+    start_day = end_day - timedelta(days=6)
+    stats = fetch_waka_json("/users/current/stats/last_7_days", waka_key)
+    summaries = fetch_waka_json(
+        "/users/current/summaries",
+        waka_key,
+        {"start": start_day.isoformat(), "end": end_day.isoformat()},
+    )
+
+    user = fetch_github_json("/user", gh_token)
+    repos = fetch_all_repos(gh_token)
+
+    repos_total = len(repos)
+    repos_public = sum(1 for repo in repos if not repo.get("private"))
+    repos_private = repos_total - repos_public
+    stars = sum(int(repo.get("stargazers_count", 0)) for repo in repos)
+
+    repo_years = [int(repo["created_at"][:4]) for repo in repos if repo.get("created_at")]
+    year_from = min(repo_years) if repo_years else datetime.now().year
+    year_to = datetime.now().year
+
+    langs = stats.get("languages") or []
+    editors = stats.get("editors") or []
+    oses = stats.get("operating_systems") or []
+
+    top_lang = langs[0] if langs else {"name": "N/A", "percent": 0}
+    top_editor = editors[0] if editors else {"name": "N/A", "percent": 0}
+
+    weekday_seconds: dict[str, float] = defaultdict(float)
+    for day_info in summaries.get("data", []):
+        day_str = day_info.get("range", {}).get("date")
+        seconds = float(day_info.get("grand_total", {}).get("total_seconds", 0) or 0)
+        if not day_str:
+            continue
+        day_name = datetime.strptime(day_str, "%Y-%m-%d").strftime("%A")
+        weekday_seconds[day_name] += seconds
+
+    bucket_seconds: dict[str, float] = {"Morning": 0.0, "Daytime": 0.0, "Evening": 0.0, "Night": 0.0}
+    activity_chunks = 0
+    for idx in range(7):
+        target_day = start_day + timedelta(days=idx)
+        try:
+            durations = fetch_waka_json("/users/current/durations", waka_key, {"date": target_day.isoformat()})
+        except urllib.error.HTTPError:
+            durations = {"data": []}
+        for item in durations.get("data", []):
+            sec = float(item.get("duration", 0) or 0)
+            stamp = float(item.get("time", 0) or 0)
+            if sec <= 0:
+                continue
+            local_dt = datetime.fromtimestamp(stamp, tz=timezone.utc).astimezone(tz)
+            hour = local_dt.hour
+            if 6 <= hour < 12:
+                bucket_seconds["Morning"] += sec
+            elif 12 <= hour < 18:
+                bucket_seconds["Daytime"] += sec
+            elif 18 <= hour < 24:
+                bucket_seconds["Evening"] += sec
+            else:
+                bucket_seconds["Night"] += sec
+            activity_chunks += 1
+
+    week_total = float(stats.get("total_seconds", 0) or 0)
+    if week_total <= 0:
+        week_total = sum(weekday_seconds.values())
+
+    if sum(bucket_seconds.values()) <= 0 and week_total > 0:
+        bucket_seconds["Night"] = week_total
+
+    peak_time_name, peak_time_value = max(bucket_seconds.items(), key=lambda x: x[1])
+    if weekday_seconds:
+        peak_day_name, peak_day_value = max(weekday_seconds.items(), key=lambda x: x[1])
+    else:
+        peak_day_name, peak_day_value = "N/A", 0.0
+
+    language_quotes = [
+        "^__^",
+        "(oo)",
+        "/(__)\\",
+        "Automation buys thinking time.",
+        "Readable code scales teams.",
+        "Tests turn fear into speed.",
+        "Automation buys thinking time.",
+        "Refactor early, ship confidently.",
+    ]
+    period_quotes = [
+        "Deep focus zone.",
+        "Review and polish.",
+        "Debug and refine.",
+        "Plan and warm up.",
+    ]
+    day_quotes = {
+        "Monday": "Automation day",
+        "Tuesday": "Learning day",
+        "Wednesday": "Planning day",
+        "Thursday": "Momentum day",
+        "Friday": "Shipping day",
+        "Saturday": "Refactor day",
+        "Sunday": "Review day",
+    }
+
+    weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+    periods = [
+        ("Morning", "06-12"),
+        ("Daytime", "12-18"),
+        ("Evening", "18-24"),
+        ("Night", "00-06"),
+    ]
+
+    lines: list[str] = []
+    lines.append(two_col("0x3EF8 · Dev Metrics", "Quick Insights"))
+    lines.append(
+        two_col(
+            f"From: {year_from} - To: {year_to}",
+            f"Top Lang : {top_lang.get('name', 'N/A')} ({float(top_lang.get('percent', 0) or 0):.2f}%)",
+        )
+    )
+    lines.append(
+        two_col(
+            f"{repos_total} repos ({repos_public} public, {repos_private} private)   |   {stars} stars",
+            f"Top Editor: {top_editor.get('name', 'N/A')} ({float(top_editor.get('percent', 0) or 0):.2f}%)",
+        )
+    )
+    lines.append(
+        two_col(
+            f"WakaTime (last 7d): {safe_text(stats, 'human_readable_total', '0 secs')} total · {safe_text(stats, 'human_readable_daily_average', '0 secs')} daily avg",
+            f"Peak Time: {peak_time_name} ({(peak_time_value / week_total * 100) if week_total else 0:.2f}%)",
+        )
+    )
+    lines.append(two_col("", f"Peak Day : {peak_day_name} ({(peak_day_value / week_total * 100) if week_total else 0:.2f}%)"))
+    lines.append(two_col("", f"Activity : {activity_chunks} chunks"))
+    lines.append("")
+    lines.append("Stats & Proficiency")
+    lines.append("")
+    lines.append("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+    lines.append("")
+    lines.append(" Languages")
+
+    for i, language in enumerate(langs[:8]):
+        name = str(language.get("name", "Unknown"))
+        pct = float(language.get("percent", 0) or 0)
+        sec = float(language.get("total_seconds", 0) or 0)
+        quote = language_quotes[i] if i < len(language_quotes) else ""
+        left = f" {name:<18} {percent_bar(pct)}   {pct:>5.2f} %   | {fmt_hours(sec):>6}"
+        lines.append(two_col(left, quote))
+
+    lines.append("")
+    lines.append("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+    lines.append("")
+    lines.append(" I Code Most During")
+    lines.append("")
+
+    for idx, (name, window) in enumerate(periods):
+        sec = bucket_seconds[name]
+        pct = (sec / week_total * 100) if week_total else 0
+        left = f" {name:<10} ({window})   {percent_bar(pct)}   {pct:>5.2f} %   | {fmt_hours(sec):>6}"
+        lines.append(two_col(left, period_quotes[idx]))
+
+    lines.append("")
+    lines.append(" I Am Most Productive On")
+    lines.append("")
+
+    for day_name in weekdays:
+        sec = weekday_seconds.get(day_name, 0.0)
+        pct = (sec / week_total * 100) if week_total else 0
+        left = f" {day_name:<10} {percent_bar(pct)}   {pct:>5.2f} %   | {fmt_hours(sec):>6}"
+        lines.append(two_col(left, day_quotes.get(day_name, "")))
+
+    lines.append("")
+    lines.append("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+    lines.append("")
+    lines.append(" Editors and Operating Systems")
+    for row in (editors[:3] + oses[:3]):
+        name = str(row.get("name", "Unknown"))
+        pct = float(row.get("percent", 0) or 0)
+        sec = float(row.get("total_seconds", 0) or 0)
+        note = "Focus mode ready." if name.lower().startswith("vs") else "Automation friendly." if name.lower().startswith("win") else ""
+        left = f" {name:<18} {percent_bar(pct)}   {pct:>6.2f} %   | {fmt_hours(sec):>6}"
+        lines.append(two_col(left, note))
+
+    timestamp = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S %Z")
+    lines.append("")
+    lines.append("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
+    lines.append("")
+    lines.append(
+        f" Languages/Time/Day/Editors/OS from WakaTime API · Repo stats from GitHub API · Updated: {timestamp}"
+    )
+    return "```text\n" + "\n".join(lines) + "\n```"
+
+
+def update_readme_section(content: str, new_block: str) -> str:
+    start_idx = content.find(START_MARKER)
+    end_idx = content.find(END_MARKER)
+    if start_idx == -1 or end_idx == -1 or end_idx < start_idx:
+        raise ValueError("WakaTime section markers were not found in README.md")
+    before = content[: start_idx + len(START_MARKER)]
+    after = content[end_idx:]
+    return f"{before}\n{new_block}\n{after}"
+
+
+def main() -> None:
+    current = README_PATH.read_text(encoding="utf-8")
+    new_block = build_metrics_block()
+    updated = update_readme_section(current, new_block)
+    README_PATH.write_text(updated, encoding="utf-8")
+
+
+if __name__ == "__main__":
+    main()

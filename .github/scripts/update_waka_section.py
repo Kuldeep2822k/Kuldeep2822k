@@ -3,6 +3,7 @@ from __future__ import annotations
 import base64
 import json
 import os
+import re
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -91,7 +92,7 @@ def fmt_hours(seconds: float) -> str:
 
 def humanize_seconds(seconds: float) -> str:
     total = max(0, int(round(seconds)))
-    if total <= 0:
+    if total == 0:
         return "0 secs"
     hours, remainder = divmod(total, 3600)
     minutes, secs = divmod(remainder, 60)
@@ -106,7 +107,8 @@ def humanize_seconds(seconds: float) -> str:
 
 
 def is_zero_time_text(value: str) -> bool:
-    return value.strip().lower() in {
+    lowered = value.strip().lower()
+    if lowered in {
         "",
         "0",
         "0 sec",
@@ -121,7 +123,12 @@ def is_zero_time_text(value: str) -> bool:
         "0 hrs",
         "0 hour",
         "0 hours",
-    }
+    }:
+        return True
+    numeric_parts = re.findall(r"\d+(?:\.\d+)?", lowered)
+    if numeric_parts and all(float(part) == 0 for part in numeric_parts):
+        return True
+    return False
 
 
 def format_metric_row(

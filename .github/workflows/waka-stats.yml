@@ -29,7 +29,7 @@ jobs:
         env:
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
           GH_TOKEN: ${{ secrets.METRICS_TOKEN }}
-          DISPLAY_TIMEZONE: Asia/Kolkata
+          DISPLAY_TIMEZONE: "Asia/Kolkata"
         run: python .github/scripts/update_waka_section.py
 
       - name: Commit and push changes

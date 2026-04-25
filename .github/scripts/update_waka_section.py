@@ -10,7 +10,7 @@ from collections import defaultdict
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
-from zoneinfo import ZoneInfo
+from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
 
 README_PATH = Path(__file__).resolve().parents[2] / "README.md"
@@ -99,7 +99,7 @@ def build_metrics_block() -> str:
     tz_name = os.environ.get("DISPLAY_TIMEZONE", "UTC")
     try:
         tz = ZoneInfo(tz_name)
-    except Exception:
+    except ZoneInfoNotFoundError:
         tz = timezone.utc
 
     end_day = datetime.now(timezone.utc).date()
@@ -144,7 +144,10 @@ def build_metrics_block() -> str:
         target_day = start_day + timedelta(days=idx)
         try:
             durations = fetch_waka_json("/users/current/durations", waka_key, {"date": target_day.isoformat()})
-        except urllib.error.HTTPError:
+        except urllib.error.HTTPError as error:
+            if 500 <= error.code < 600:
+                raise
+            print(f"Skipping durations for {target_day.isoformat()} (HTTP {error.code})")
             durations = {"data": []}
         for item in durations.get("data", []):
             sec = float(item.get("duration", 0) or 0)

@@ -21,8 +21,8 @@ GITHUB_BASE = "https://api.github.com"
 MAX_LANGUAGES = 8
 MAX_EDITORS_OR_OS = 3
 NAME_WIDTH = 18
-PCT_WIDTH = 5
-HOURS_WIDTH = 6
+PCT_WIDTH = 6
+HOURS_WIDTH = 8
 
 
 def _auth_header(api_key: str) -> dict[str, str]:

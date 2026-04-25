@@ -89,6 +89,41 @@ def fmt_hours(seconds: float) -> str:
     return f"{seconds / 3600:.2f} h"
 
 
+def humanize_seconds(seconds: float) -> str:
+    total = max(0, int(round(seconds)))
+    if total <= 0:
+        return "0 secs"
+    hours, remainder = divmod(total, 3600)
+    minutes, secs = divmod(remainder, 60)
+    parts: list[str] = []
+    if hours:
+        parts.append(f"{hours} hr" if hours == 1 else f"{hours} hrs")
+    if minutes:
+        parts.append(f"{minutes} min" if minutes == 1 else f"{minutes} mins")
+    if secs and not parts:
+        parts.append(f"{secs} sec" if secs == 1 else f"{secs} secs")
+    return " ".join(parts)
+
+
+def is_zero_time_text(value: str) -> bool:
+    return value.strip().lower() in {
+        "",
+        "0",
+        "0 sec",
+        "0 secs",
+        "0 second",
+        "0 seconds",
+        "0 min",
+        "0 mins",
+        "0 minute",
+        "0 minutes",
+        "0 hr",
+        "0 hrs",
+        "0 hour",
+        "0 hours",
+    }
+
+
 def format_metric_row(
     label: str,
     percent: float,
@@ -198,6 +233,9 @@ def build_metrics_block() -> str:
     week_total = float(stats.get("total_seconds", 0) or 0)
     if week_total <= 0:
         week_total = sum(weekday_seconds.values())
+    daily_average_seconds = float(stats.get("daily_average", 0) or 0)
+    if daily_average_seconds <= 0 and week_total > 0:
+        daily_average_seconds = week_total / 7
 
     used_duration_fallback = False
     if sum(bucket_seconds.values()) <= 0 and week_total > 0:
@@ -246,6 +284,13 @@ def build_metrics_block() -> str:
         ("Night", "00-06"),
     ]
 
+    total_display = safe_text(stats, "human_readable_total", "")
+    if is_zero_time_text(total_display):
+        total_display = humanize_seconds(week_total)
+    daily_display = safe_text(stats, "human_readable_daily_average", "")
+    if is_zero_time_text(daily_display):
+        daily_display = humanize_seconds(daily_average_seconds)
+
     lines: list[str] = []
     lines.append(two_col("0x3EF8 · Dev Metrics", "Quick Insights"))
     lines.append(
@@ -262,7 +307,7 @@ def build_metrics_block() -> str:
     )
     lines.append(
         two_col(
-            f"WakaTime (last 7d): {safe_text(stats, 'human_readable_total', '0 secs')} total · {safe_text(stats, 'human_readable_daily_average', '0 secs')} daily avg",
+            f"WakaTime (last 7d): {total_display} total · {daily_display} daily avg",
             f"Peak Time: {peak_time_name} ({(peak_time_value / week_total * 100) if week_total else 0:.2f}%)",
         )
     )

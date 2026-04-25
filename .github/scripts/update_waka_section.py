@@ -101,7 +101,7 @@ def humanize_seconds(seconds: float) -> str:
         parts.append(f"{hours} hr" if hours == 1 else f"{hours} hrs")
     if minutes:
         parts.append(f"{minutes} min" if minutes == 1 else f"{minutes} mins")
-    if secs and not parts:
+    if secs:
         parts.append(f"{secs} sec" if secs == 1 else f"{secs} secs")
     return " ".join(parts)
 
@@ -125,8 +125,13 @@ def is_zero_time_text(value: str) -> bool:
         "0 hours",
     }:
         return True
-    numeric_parts = re.findall(r"\d+(?:\.\d+)?", lowered)
-    if numeric_parts and all(float(part) == 0 for part in numeric_parts):
+    if re.fullmatch(r"0+(?::0+){1,2}", lowered):
+        return True
+    unit_values = re.findall(
+        r"(\d+(?:\.\d+)?)\s*(?:h|hr|hrs|hour|hours|m|min|mins|minute|minutes|s|sec|secs|second|seconds)\b",
+        lowered,
+    )
+    if unit_values and all(float(part) == 0 for part in unit_values):
         return True
     return False
 

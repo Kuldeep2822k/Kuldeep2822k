@@ -18,6 +18,8 @@ START_MARKER = "<!--START_SECTION:waka-->"
 END_MARKER = "<!--END_SECTION:waka-->"
 WAKA_BASE = "https://wakatime.com/api/v1"
 GITHUB_BASE = "https://api.github.com"
+MAX_LANGUAGES = 8
+MAX_EDITORS_OR_OS = 3
 
 
 def _auth_header(api_key: str) -> dict[str, str]:
@@ -147,7 +149,11 @@ def build_metrics_block() -> str:
         except urllib.error.HTTPError as error:
             if 500 <= error.code < 600:
                 raise
-            print(f"Skipping durations for {target_day.isoformat()} (HTTP {error.code})")
+            response_body = error.read().decode("utf-8", errors="replace")
+            print(
+                f"Skipping durations for {target_day.isoformat()} "
+                f"(HTTP {error.code}): {response_body[:200]}"
+            )
             durations = {"data": []}
         for item in durations.get("data", []):
             sec = float(item.get("duration", 0) or 0)
@@ -171,6 +177,7 @@ def build_metrics_block() -> str:
         week_total = sum(weekday_seconds.values())
 
     if sum(bucket_seconds.values()) <= 0 and week_total > 0:
+        # Durations can be unavailable for some accounts/permissions; keep layout stable with a single fallback bucket.
         bucket_seconds["Night"] = week_total
 
     peak_time_name, peak_time_value = max(bucket_seconds.items(), key=lambda x: x[1])
@@ -180,6 +187,7 @@ def build_metrics_block() -> str:
         peak_day_name, peak_day_value = "N/A", 0.0
 
     language_quotes = [
+        # Keep the first three rows as an ASCII cow face to match the requested visual style.
         "^__^",
         "(oo)",
         "/(__)\\",
@@ -242,7 +250,7 @@ def build_metrics_block() -> str:
     lines.append("")
     lines.append(" Languages")
 
-    for i, language in enumerate(langs[:8]):
+    for i, language in enumerate(langs[:MAX_LANGUAGES]):
         name = str(language.get("name", "Unknown"))
         pct = float(language.get("percent", 0) or 0)
         sec = float(language.get("total_seconds", 0) or 0)
@@ -276,7 +284,7 @@ def build_metrics_block() -> str:
     lines.append("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
     lines.append("")
     lines.append(" Editors and Operating Systems")
-    for row in (editors[:3] + oses[:3]):
+    for row in (editors[:MAX_EDITORS_OR_OS] + oses[:MAX_EDITORS_OR_OS]):
         name = str(row.get("name", "Unknown"))
         pct = float(row.get("percent", 0) or 0)
         sec = float(row.get("total_seconds", 0) or 0)

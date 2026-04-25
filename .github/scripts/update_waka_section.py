@@ -149,7 +149,7 @@ def build_metrics_block() -> str:
     top_lang = langs[0] if langs else {"name": "N/A", "percent": 0}
     top_editor = editors[0] if editors else {"name": "N/A", "percent": 0}
 
-    weekday_seconds: dict[str, float] = defaultdict(float)
+    weekday_seconds: defaultdict[str, float] = defaultdict(float)
     for day_info in summaries.get("data", []):
         day_str = day_info.get("range", {}).get("date")
         seconds = float(day_info.get("grand_total", {}).get("total_seconds", 0) or 0)

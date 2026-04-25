@@ -113,82 +113,49 @@ I build data-driven products across **full-stack web**, **data pipelines**, and 
 ## ⏱️ WakaTime Coding Stats
 
 <!--START_SECTION:waka-->
-![Profile Views](http://img.shields.io/badge/Profile%20Views-34-blue?style=flat)
-
-**🐱 My GitHub Data** 
-
-> 📦 41.6 kB Used in GitHub's Storage 
- > 
-> 🏆 865 Contributions in the Year 2026
- > 
-> 💼 Opted to Hire
- > 
-> 📜 12 Public Repositories 
- > 
-> 🔑 5 Private Repositories 
- > 
-**I'm a Night 🦉** 
-
 ```text
-🌞 Morning                1655 commits        ██░░░░░░░░░░░░░░░░░░░░░░░   09.52 % 
-🌆 Daytime                5297 commits        ████████░░░░░░░░░░░░░░░░░   30.46 % 
-🌃 Evening                7599 commits        ███████████░░░░░░░░░░░░░░   43.69 % 
-🌙 Night                  2841 commits        ████░░░░░░░░░░░░░░░░░░░░░   16.34 % 
+0x3EF8 · Dev Metrics                                                       | Quick Insights
+From: 2025 - To: 2026                                                      | Top Lang : N/A (0.00%)
+17 repos (12 public, 5 private)   |   6 stars                              | Top Editor: N/A (0.00%)
+WakaTime (last 7d): 0 secs total · 0 secs daily avg                        | Peak Time: Evening (63.74%)
+                                                                           | Peak Day : Thursday (25.67%)
+                                                                           | Activity : 34 chunks
+
+Stats & Proficiency
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ Languages
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ I Code Most During
+
+ Morning (06-12)    ▱▱▱▱▱▱▱▱▱▱     0.88 %   |   0.08 h                     | Deep focus zone.
+ Daytime (12-18)    ▰▰▰▱▱▱▱▱▱▱    25.61 %   |   2.36 h                     | Review and polish.
+ Evening (18-24)    ▰▰▰▰▰▰▱▱▱▱    63.74 %   |   5.88 h                     | Debug and refine.
+ Night (00-06)      ▰▱▱▱▱▱▱▱▱▱     9.76 %   |   0.90 h                     | Plan and warm up.
+
+ I Am Most Productive On
+
+ Monday     ▰▱▱▱▱▱▱▱▱▱     7.50 %   |   0.69 h                             | Automation day
+ Tuesday    ▰▰▱▱▱▱▱▱▱▱    23.54 %   |   2.17 h                             | Learning day
+ Wednesday  ▰▰▱▱▱▱▱▱▱▱    22.25 %   |   2.05 h                             | Planning day
+ Thursday   ▰▰▰▱▱▱▱▱▱▱    25.67 %   |   2.37 h                             | Momentum day
+ Friday     ▰▱▱▱▱▱▱▱▱▱    12.06 %   |   1.11 h                             | Shipping day
+ Saturday   ▰▱▱▱▱▱▱▱▱▱     8.17 %   |   0.75 h                             | Refactor day
+ Sunday     ▱▱▱▱▱▱▱▱▱▱     0.80 %   |   0.07 h                             | Review day
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ Editors and Operating Systems
+ Editors
+ Operating Systems
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ Languages/Time/Day/Editors/OS from WakaTime API · Repo stats from GitHub API · Updated: 2026-04-25 19:33:56 IST
 ```
-📅 **I'm Most Productive on Thursday** 
-
-```text
-Monday                   1243 commits        ██░░░░░░░░░░░░░░░░░░░░░░░   07.15 % 
-Tuesday                  2307 commits        ███░░░░░░░░░░░░░░░░░░░░░░   13.26 % 
-Wednesday                3258 commits        █████░░░░░░░░░░░░░░░░░░░░   18.73 % 
-Thursday                 3939 commits        ██████░░░░░░░░░░░░░░░░░░░   22.65 % 
-Friday                   1538 commits        ██░░░░░░░░░░░░░░░░░░░░░░░   08.84 % 
-Saturday                 3258 commits        █████░░░░░░░░░░░░░░░░░░░░   18.73 % 
-Sunday                   1849 commits        ███░░░░░░░░░░░░░░░░░░░░░░   10.63 % 
-```
-
-
-📊 **This Week I Spent My Time On** 
-
-```text
-🕑︎ Time Zone: Asia/Kolkata
-
-💬 Programming Languages: 
-JavaScript               5 hrs 5 mins        ███████████████░░░░░░░░░░   60.15 % 
-Markdown                 1 hr 11 mins        ████░░░░░░░░░░░░░░░░░░░░░   14.05 % 
-Other                    39 mins             ██░░░░░░░░░░░░░░░░░░░░░░░   07.77 % 
-JSON                     32 mins             ██░░░░░░░░░░░░░░░░░░░░░░░   06.38 % 
-TypeScript               20 mins             █░░░░░░░░░░░░░░░░░░░░░░░░   04.13 % 
-
-🔥 Editors: 
-Antigravity              7 hrs 46 mins       ███████████████████████░░   91.81 % 
-WebStorm                 41 mins             ██░░░░░░░░░░░░░░░░░░░░░░░   08.19 % 
-
-🐱‍💻 Projects: 
-eslint                   6 hrs 52 mins       ████████████████████░░░░░   81.16 % 
-portfolio-copy           47 mins             ██░░░░░░░░░░░░░░░░░░░░░░░   09.33 % 
-masterPortfolio          21 mins             █░░░░░░░░░░░░░░░░░░░░░░░░   04.30 % 
-guild                    19 mins             █░░░░░░░░░░░░░░░░░░░░░░░░   03.74 % 
-kulde                    5 mins              ░░░░░░░░░░░░░░░░░░░░░░░░░   01.06 % 
-
-💻 Operating System: 
-Windows                  8 hrs 27 mins       █████████████████████████   100.00 % 
-```
-
-**I Mostly Code in TypeScript** 
-
-```text
-TypeScript               7 repos             ████████████░░░░░░░░░░░░░   50.00 % 
-JavaScript               3 repos             █████░░░░░░░░░░░░░░░░░░░░   21.43 % 
-Python                   1 repo              ██░░░░░░░░░░░░░░░░░░░░░░░   07.14 % 
-C++                      1 repo              ██░░░░░░░░░░░░░░░░░░░░░░░   07.14 % 
-Go                       1 repo              ██░░░░░░░░░░░░░░░░░░░░░░░   07.14 % 
-```
-
-
-
-
- Last Updated on 25/04/2026 06:26:53 UTC
 <!--END_SECTION:waka-->
 
 ---

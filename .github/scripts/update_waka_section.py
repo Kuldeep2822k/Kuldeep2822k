@@ -77,7 +77,7 @@ def safe_text(stats: dict[str, Any], key: str, fallback: str) -> str:
 
 
 def percent_bar(percent: float) -> str:
-    filled = max(0, min(10, round(percent / 10)))
+    filled = max(0, min(10, int(percent / 10 + 0.5)))
     return "▰" * filled + "▱" * (10 - filled)
 
 

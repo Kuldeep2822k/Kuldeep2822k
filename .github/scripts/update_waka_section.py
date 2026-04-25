@@ -20,6 +20,9 @@ WAKA_BASE = "https://wakatime.com/api/v1"
 GITHUB_BASE = "https://api.github.com"
 MAX_LANGUAGES = 8
 MAX_EDITORS_OR_OS = 3
+NAME_WIDTH = 18
+PCT_WIDTH = 5
+HOURS_WIDTH = 6
 
 
 def _auth_header(api_key: str) -> dict[str, str]:
@@ -86,6 +89,21 @@ def fmt_hours(seconds: float) -> str:
     return f"{seconds / 3600:.2f} h"
 
 
+def format_metric_row(
+    label: str,
+    percent: float,
+    seconds: float,
+    *,
+    label_width: int = NAME_WIDTH,
+    prefix: str = " ",
+    suffix: str = "   |",
+) -> str:
+    return (
+        f"{prefix}{label:<{label_width}} {percent_bar(percent)}   {percent:>{PCT_WIDTH}.2f} %"
+        f"{suffix} {fmt_hours(seconds):>{HOURS_WIDTH}}"
+    )
+
+
 def platform_note(name: str) -> str:
     lowered = name.lower()
     if lowered.startswith("vs"):
@@ -148,7 +166,9 @@ def build_metrics_block() -> str:
             durations = fetch_waka_json("/users/current/durations", waka_key, {"date": target_day.isoformat()})
         except urllib.error.HTTPError as error:
             if 500 <= error.code < 600:
-                raise
+                raise RuntimeError(
+                    f"Failed fetching WakaTime durations for {target_day.isoformat()} (HTTP {error.code})"
+                ) from error
             response_body = error.read().decode("utf-8", errors="replace")
             print(
                 f"Skipping durations for {target_day.isoformat()} "
@@ -255,7 +275,7 @@ def build_metrics_block() -> str:
         pct = float(language.get("percent", 0) or 0)
         sec = float(language.get("total_seconds", 0) or 0)
         quote = language_quotes[i] if i < len(language_quotes) else ""
-        left = f" {name:<18} {percent_bar(pct)}   {pct:>5.2f} %   | {fmt_hours(sec):>6}"
+        left = format_metric_row(name, pct, sec)
         lines.append(two_col(left, quote))
 
     lines.append("")
@@ -267,7 +287,7 @@ def build_metrics_block() -> str:
     for idx, (name, window) in enumerate(periods):
         sec = bucket_seconds[name]
         pct = (sec / week_total * 100) if week_total else 0
-        left = f" {name:<10} ({window})   {percent_bar(pct)}   {pct:>5.2f} %   | {fmt_hours(sec):>6}"
+        left = format_metric_row(f"{name} ({window})", pct, sec)
         lines.append(two_col(left, period_quotes[idx]))
 
     lines.append("")
@@ -277,7 +297,7 @@ def build_metrics_block() -> str:
     for day_name in weekdays:
         sec = weekday_seconds.get(day_name, 0.0)
         pct = (sec / week_total * 100) if week_total else 0
-        left = f" {day_name:<10} {percent_bar(pct)}   {pct:>5.2f} %   | {fmt_hours(sec):>6}"
+        left = format_metric_row(day_name, pct, sec, label_width=10)
         lines.append(two_col(left, day_quotes.get(day_name, "")))
 
     lines.append("")
@@ -289,7 +309,7 @@ def build_metrics_block() -> str:
         pct = float(row.get("percent", 0) or 0)
         sec = float(row.get("total_seconds", 0) or 0)
         note = platform_note(name)
-        left = f" {name:<18} {percent_bar(pct)}   {pct:>6.2f} %   | {fmt_hours(sec):>6}"
+        left = format_metric_row(name, pct, sec)
         lines.append(two_col(left, note))
 
     timestamp = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S %Z")
@@ -305,8 +325,10 @@ def build_metrics_block() -> str:
 def update_readme_section(content: str, new_block: str) -> str:
     start_idx = content.find(START_MARKER)
     end_idx = content.find(END_MARKER)
-    if start_idx == -1 or end_idx == -1 or end_idx < start_idx:
-        raise ValueError("WakaTime section markers were not found in README.md")
+    if start_idx == -1 or end_idx == -1:
+        raise ValueError("WakaTime section markers are missing in README.md")
+    if end_idx < start_idx:
+        raise ValueError("WakaTime section markers are incorrectly ordered in README.md")
     before = content[: start_idx + len(START_MARKER)]
     after = content[end_idx:]
     return f"{before}\n{new_block}\n{after}"

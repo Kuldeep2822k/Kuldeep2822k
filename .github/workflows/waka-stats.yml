@@ -41,6 +41,11 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          BRANCH="${GITHUB_REF_NAME}"
           git add README.md
           git commit -m "chore: update WakaTime dev metrics"
-          git push
+          if ! git push origin "HEAD:${BRANCH}"; then
+            git fetch origin "${BRANCH}"
+            git rebase "origin/${BRANCH}"
+            git push origin "HEAD:${BRANCH}"
+          fi

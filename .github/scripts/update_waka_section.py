@@ -160,6 +160,7 @@ def build_metrics_block() -> str:
 
     bucket_seconds: dict[str, float] = {"Morning": 0.0, "Daytime": 0.0, "Evening": 0.0, "Night": 0.0}
     activity_chunks = 0
+    durations_available = False
     for idx in range(7):
         target_day = start_day + timedelta(days=idx)
         try:
@@ -167,7 +168,8 @@ def build_metrics_block() -> str:
         except urllib.error.HTTPError as error:
             if 500 <= error.code < 600:
                 raise RuntimeError(
-                    f"Failed fetching WakaTime durations for {target_day.isoformat()} (HTTP {error.code})"
+                    f"Failed fetching WakaTime durations for {target_day.isoformat()} (HTTP {error.code}). "
+                    "WakaTime may be temporarily unavailable; retry on the next run."
                 ) from error
             response_body = error.read().decode("utf-8", errors="replace")
             print(
@@ -181,6 +183,7 @@ def build_metrics_block() -> str:
             if sec <= 0:
                 continue
             local_dt = datetime.fromtimestamp(stamp, tz=timezone.utc).astimezone(tz)
+            durations_available = True
             hour = local_dt.hour
             if 6 <= hour < 12:
                 bucket_seconds["Morning"] += sec
@@ -196,9 +199,11 @@ def build_metrics_block() -> str:
     if week_total <= 0:
         week_total = sum(weekday_seconds.values())
 
+    used_duration_fallback = False
     if sum(bucket_seconds.values()) <= 0 and week_total > 0:
         # Durations can be unavailable for some accounts/permissions; keep layout stable with a single fallback bucket.
         bucket_seconds["Night"] = week_total
+        used_duration_fallback = True
 
     peak_time_name, peak_time_value = max(bucket_seconds.items(), key=lambda x: x[1])
     if weekday_seconds:
@@ -283,6 +288,9 @@ def build_metrics_block() -> str:
     lines.append("")
     lines.append(" I Code Most During")
     lines.append("")
+    if used_duration_fallback or not durations_available:
+        lines.append(" (time buckets fallback applied: detailed durations unavailable)")
+        lines.append("")
 
     for idx, (name, window) in enumerate(periods):
         sec = bucket_seconds[name]
@@ -304,7 +312,16 @@ def build_metrics_block() -> str:
     lines.append("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
     lines.append("")
     lines.append(" Editors and Operating Systems")
-    for row in (editors[:MAX_EDITORS_OR_OS] + oses[:MAX_EDITORS_OR_OS]):
+    lines.append(" Editors")
+    for row in editors[:MAX_EDITORS_OR_OS]:
+        name = str(row.get("name", "Unknown"))
+        pct = float(row.get("percent", 0) or 0)
+        sec = float(row.get("total_seconds", 0) or 0)
+        note = platform_note(name)
+        left = format_metric_row(name, pct, sec)
+        lines.append(two_col(left, note))
+    lines.append(" Operating Systems")
+    for row in oses[:MAX_EDITORS_OR_OS]:
         name = str(row.get("name", "Unknown"))
         pct = float(row.get("percent", 0) or 0)
         sec = float(row.get("total_seconds", 0) or 0)

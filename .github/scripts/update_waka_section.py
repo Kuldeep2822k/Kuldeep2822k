@@ -24,6 +24,10 @@ MAX_EDITORS_OR_OS = 3
 NAME_WIDTH = 18
 PCT_WIDTH = 6
 HOURS_WIDTH = 8
+ZERO_CLOCK_RE = re.compile(r"0+(?::0+){1,2}")
+ZERO_UNIT_VALUES_RE = re.compile(
+    r"(\d+(?:\.\d+)?)\s*(?:h|hr|hrs|hour|hours|m|min|mins|minute|minutes|s|sec|secs|second|seconds)\b"
+)
 
 
 def _auth_header(api_key: str) -> dict[str, str]:
@@ -125,12 +129,9 @@ def is_zero_time_text(value: str) -> bool:
         "0 hours",
     }:
         return True
-    if re.fullmatch(r"0+(?::0+){1,2}", lowered):
+    if ZERO_CLOCK_RE.fullmatch(lowered):
         return True
-    unit_values = re.findall(
-        r"(\d+(?:\.\d+)?)\s*(?:h|hr|hrs|hour|hours|m|min|mins|minute|minutes|s|sec|secs|second|seconds)\b",
-        lowered,
-    )
+    unit_values = ZERO_UNIT_VALUES_RE.findall(lowered)
     if unit_values and all(float(part) == 0 for part in unit_values):
         return True
     return False

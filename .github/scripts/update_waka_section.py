@@ -10,11 +10,7 @@ from collections import defaultdict
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
-
-try:
-    from zoneinfo import ZoneInfo
-except ImportError:  # pragma: no cover
-    ZoneInfo = None  # type: ignore[assignment]
+from zoneinfo import ZoneInfo
 
 
 README_PATH = Path(__file__).resolve().parents[2] / "README.md"
@@ -101,7 +97,10 @@ def build_metrics_block() -> str:
     waka_key = os.environ["WAKATIME_API_KEY"].strip()
     gh_token = os.environ["GH_TOKEN"].strip()
     tz_name = os.environ.get("DISPLAY_TIMEZONE", "UTC")
-    tz = ZoneInfo(tz_name) if ZoneInfo else timezone.utc
+    try:
+        tz = ZoneInfo(tz_name)
+    except Exception:
+        tz = timezone.utc
 
     end_day = datetime.now(timezone.utc).date()
     start_day = end_day - timedelta(days=6)
@@ -112,7 +111,6 @@ def build_metrics_block() -> str:
         {"start": start_day.isoformat(), "end": end_day.isoformat()},
     )
 
-    fetch_github_json("/user", gh_token)
     repos = fetch_all_repos(gh_token)
 
     repos_total = len(repos)

@@ -7,7 +7,7 @@ import urllib.error
 import urllib.parse
 import urllib.request
 from collections import defaultdict
-from datetime import date, datetime, timedelta, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 
@@ -88,6 +88,15 @@ def fmt_hours(seconds: float) -> str:
     return f"{seconds / 3600:.2f} h"
 
 
+def platform_note(name: str) -> str:
+    lowered = name.lower()
+    if lowered.startswith("vs"):
+        return "Focus mode ready."
+    if lowered.startswith("win"):
+        return "Automation friendly."
+    return ""
+
+
 def build_metrics_block() -> str:
     waka_key = os.environ["WAKATIME_API_KEY"].strip()
     gh_token = os.environ["GH_TOKEN"].strip()
@@ -103,7 +112,7 @@ def build_metrics_block() -> str:
         {"start": start_day.isoformat(), "end": end_day.isoformat()},
     )
 
-    user = fetch_github_json("/user", gh_token)
+    fetch_github_json("/user", gh_token)
     repos = fetch_all_repos(gh_token)
 
     repos_total = len(repos)
@@ -176,7 +185,7 @@ def build_metrics_block() -> str:
         "Automation buys thinking time.",
         "Readable code scales teams.",
         "Tests turn fear into speed.",
-        "Automation buys thinking time.",
+        "Small loops build momentum.",
         "Refactor early, ship confidently.",
     ]
     period_quotes = [
@@ -270,7 +279,7 @@ def build_metrics_block() -> str:
         name = str(row.get("name", "Unknown"))
         pct = float(row.get("percent", 0) or 0)
         sec = float(row.get("total_seconds", 0) or 0)
-        note = "Focus mode ready." if name.lower().startswith("vs") else "Automation friendly." if name.lower().startswith("win") else ""
+        note = platform_note(name)
         left = f" {name:<18} {percent_bar(pct)}   {pct:>6.2f} %   | {fmt_hours(sec):>6}"
         lines.append(two_col(left, note))
 

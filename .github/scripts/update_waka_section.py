@@ -167,10 +167,11 @@ def platform_note(name: str) -> str:
 
 
 def derive_top_repo_language(repos: list[dict[str, Any]]) -> dict[str, Any]:
-    """Estimate top language from repository primary-language frequency when WakaTime is empty."""
+    """Return WakaTime-like {'name','percent'} top language using repo primary-language frequency."""
     language_counts = Counter()
     for repo in repos:
         language = str(repo.get("language") or "").strip()
+        # Some repo records can provide a non-empty "None"/"none"-like placeholder language.
         if language and language.lower() != "none":
             language_counts[language] += 1
     if not language_counts:
@@ -330,7 +331,7 @@ def build_metrics_block() -> str:
     )
     lines.append(
         two_col(
-            f"{repos_total} repos ({repos_public} public, {repos_private} private) - {stars} stars",
+            f"Repos: {repos_total} ({repos_public} pub/{repos_private} pri), Stars: {stars}",
             f"Top Editor: {top_editor.get('name', 'N/A')} ({float(top_editor.get('percent', 0) or 0):.2f}%)",
         )
     )

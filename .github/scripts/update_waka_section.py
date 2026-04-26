@@ -167,11 +167,11 @@ def platform_note(name: str) -> str:
 
 
 def derive_top_repo_language(repos: list[dict[str, Any]]) -> dict[str, Any]:
-    language_counts = Counter(
-        str(repo.get("language")).strip()
-        for repo in repos
-        if repo.get("language") and str(repo.get("language")).strip().lower() != "none"
-    )
+    language_counts: Counter[str] = Counter()
+    for repo in repos:
+        language = str(repo.get("language") or "").strip()
+        if language and language.lower() != "none":
+            language_counts[language] += 1
     if not language_counts:
         return {"name": "N/A", "percent": 0.0}
     top_name, top_count = language_counts.most_common(1)[0]
@@ -214,7 +214,7 @@ def build_metrics_block() -> str:
     oses = stats.get("operating_systems") or []
 
     top_lang = langs[0] if langs else derive_top_repo_language(repos)
-    top_editor = editors[0] if editors else {"name": "N/A", "percent": 0}
+    top_editor = editors[0] if editors else {"name": "N/A", "percent": 0.0}
 
     weekday_seconds: defaultdict[str, float] = defaultdict(float)
     for day_info in summaries.get("data", []):

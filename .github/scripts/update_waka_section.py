@@ -167,6 +167,7 @@ def platform_note(name: str) -> str:
 
 
 def derive_top_repo_language(repos: list[dict[str, Any]]) -> dict[str, Any]:
+    """Estimate top language from repository primary-language frequency when WakaTime is empty."""
     language_counts: Counter[str] = Counter()
     for repo in repos:
         language = str(repo.get("language") or "").strip()
@@ -354,7 +355,7 @@ def build_metrics_block() -> str:
             left = format_metric_row(name, pct, sec)
             lines.append(two_col(left, quote))
     else:
-        lines.append(" No language activity returned by WakaTime in the last 7 days.")
+        lines.append(" No language activity returned by WakaTime for the current report window.")
 
     lines.append("")
     lines.append("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")

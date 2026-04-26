@@ -325,7 +325,7 @@ def build_metrics_block() -> str:
     )
     lines.append(
         two_col(
-            f"{repos_total} repos ({repos_public} public, {repos_private} private)   |   {stars} stars",
+            f"{repos_total} repos ({repos_public} public, {repos_private} private), {stars} stars",
             f"Top Editor: {top_editor.get('name', 'N/A')} ({float(top_editor.get('percent', 0) or 0):.2f}%)",
         )
     )

@@ -114,47 +114,52 @@ I build data-driven products across **full-stack web**, **data pipelines**, and 
 
 <!--START_SECTION:waka-->
 ```text
-0x3EF8 · Dev Metrics                                                       | Quick Insights
-From: 2025 - To: 2026                                                      | Top Lang : N/A (0.00%)
-17 repos (12 public, 5 private)   |   6 stars                              | Top Editor: N/A (0.00%)
-WakaTime (last 7d): 9 hrs 46 mins 14 secs total · 1 hr 23 mins 45 secs daily avg | Peak Time: Evening (65.09%)
-                                                                           | Peak Day : Thursday (24.22%)
-                                                                           | Activity : 37 chunks
+0x3EF8 · Dev Metrics                                         | Quick Insights
+From: 2025 - To: 2026                                        | Top Lang : TypeScript (55.56%)
+Repos: 17 (12 pub/5 pri), Stars: 6                           | Top Editor: N/A (0.00%)
+WakaTime (last 7d): 10 hrs 53 secs total
+Daily Average: 1 hr 25 mins 50 secs
+                                                             | Peak Time: Evening (63.50%)
+                                                             | Peak Day : Thursday (23.63%)
+                                                             | Activity : 38 chunks
 
 Stats & Proficiency
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
  Languages
+ No language activity returned by WakaTime for the current report window.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
  I Code Most During
 
- Morning (06-12)    ▱▱▱▱▱▱▱▱▱▱     0.83 %   |   0.08 h                     | Deep focus zone.
- Daytime (12-18)    ▰▰▱▱▱▱▱▱▱▱    24.82 %   |   2.43 h                     | Review and polish.
- Evening (18-24)    ▰▰▰▰▰▰▰▱▱▱    65.09 %   |   6.36 h                     | Debug and refine.
- Night (00-06)      ▰▱▱▱▱▱▱▱▱▱     9.25 %   |   0.90 h                     | Plan and warm up.
+ Morning (06-12)  ▱▱▱▱▱▱▱▱▱▱     3.24 %   |   0.32 h         | Deep focus zone.
+ Daytime (12-18)  ▰▰▱▱▱▱▱▱▱▱    24.22 %   |   2.43 h         | Review and polish.
+ Evening (18-24)  ▰▰▰▰▰▰▱▱▱▱    63.50 %   |   6.36 h         | Debug and refine.
+ Night (00-06)    ▰▱▱▱▱▱▱▱▱▱     9.04 %   |   0.91 h         | Plan and warm up.
 
  I Am Most Productive On
 
- Monday     ▰▱▱▱▱▱▱▱▱▱     7.08 %   |   0.69 h                             | Automation day
- Tuesday    ▰▰▱▱▱▱▱▱▱▱    22.21 %   |   2.17 h                             | Learning day
- Wednesday  ▰▰▱▱▱▱▱▱▱▱    21.00 %   |   2.05 h                             | Planning day
- Thursday   ▰▰▱▱▱▱▱▱▱▱    24.22 %   |   2.37 h                             | Momentum day
- Friday     ▰▱▱▱▱▱▱▱▱▱    11.38 %   |   1.11 h                             | Shipping day
- Saturday   ▰▱▱▱▱▱▱▱▱▱    14.08 %   |   1.38 h                             | Refactor day
- Sunday     ▱▱▱▱▱▱▱▱▱▱     0.04 %   |   0.00 h                             | Review day
+ Monday     ▰▱▱▱▱▱▱▱▱▱     6.90 %   |   0.69 h               | Automation day
+ Tuesday    ▰▰▱▱▱▱▱▱▱▱    21.67 %   |   2.17 h               | Learning day
+ Wednesday  ▰▰▱▱▱▱▱▱▱▱    20.48 %   |   2.05 h               | Planning day
+ Thursday   ▰▰▱▱▱▱▱▱▱▱    23.63 %   |   2.37 h               | Momentum day
+ Friday     ▰▱▱▱▱▱▱▱▱▱    11.10 %   |   1.11 h               | Shipping day
+ Saturday   ▰▱▱▱▱▱▱▱▱▱    13.73 %   |   1.38 h               | Refactor day
+ Sunday     ▱▱▱▱▱▱▱▱▱▱     2.48 %   |   0.25 h               | Review day
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
  Editors and Operating Systems
  Editors
+ No editor activity returned by WakaTime.
  Operating Systems
+ No operating system activity returned by WakaTime.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
- Languages/Time/Day/Editors/OS from WakaTime API · Repo stats from GitHub API · Updated: 2026-04-26 09:31:02 IST
+ Languages/Time/Day/Editors/OS from WakaTime API · Repo stats from GitHub API · Updated: 2026-04-26 13:20:08 IST
 ```
 <!--END_SECTION:waka-->
 

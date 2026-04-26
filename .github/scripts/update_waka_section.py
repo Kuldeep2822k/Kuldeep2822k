@@ -8,6 +8,7 @@ import urllib.error
 import urllib.parse
 import urllib.request
 from collections import defaultdict
+from collections import Counter
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
@@ -21,7 +22,7 @@ WAKA_BASE = "https://wakatime.com/api/v1"
 GITHUB_BASE = "https://api.github.com"
 MAX_LANGUAGES = 8
 MAX_EDITORS_OR_OS = 3
-NAME_WIDTH = 18
+NAME_WIDTH = 16
 PCT_WIDTH = 6
 HOURS_WIDTH = 8
 ZERO_CLOCK_RE = re.compile(r"0+(?::0+){1,2}")
@@ -86,7 +87,7 @@ def percent_bar(percent: float) -> str:
     return "▰" * filled + "▱" * (10 - filled)
 
 
-def two_col(left: str, right: str, width: int = 74) -> str:
+def two_col(left: str, right: str, width: int = 60) -> str:
     return f"{left:<{width}} | {right}" if right else left
 
 
@@ -161,6 +162,20 @@ def platform_note(name: str) -> str:
     return ""
 
 
+def derive_top_repo_language(repos: list[dict[str, Any]]) -> dict[str, Any]:
+    language_counts = Counter(
+        str(repo.get("language")).strip()
+        for repo in repos
+        if repo.get("language") and str(repo.get("language")).strip().lower() != "none"
+    )
+    if not language_counts:
+        return {"name": "N/A", "percent": 0.0}
+    top_name, top_count = language_counts.most_common(1)[0]
+    total = sum(language_counts.values())
+    percent = (top_count / total * 100) if total else 0.0
+    return {"name": top_name, "percent": percent}
+
+
 def build_metrics_block() -> str:
     waka_key = os.environ["WAKATIME_API_KEY"].strip()
     gh_token = os.environ["GH_TOKEN"].strip()
@@ -194,7 +209,7 @@ def build_metrics_block() -> str:
     editors = stats.get("editors") or []
     oses = stats.get("operating_systems") or []
 
-    top_lang = langs[0] if langs else {"name": "N/A", "percent": 0}
+    top_lang = langs[0] if langs else derive_top_repo_language(repos)
     top_editor = editors[0] if editors else {"name": "N/A", "percent": 0}
 
     weekday_seconds: defaultdict[str, float] = defaultdict(float)
@@ -263,10 +278,6 @@ def build_metrics_block() -> str:
         peak_day_name, peak_day_value = "N/A", 0.0
 
     language_quotes = [
-        # Keep the first three rows as an ASCII cow face to match the requested visual style.
-        "^__^",
-        "(oo)",
-        "/(__)\\",
         "Automation buys thinking time.",
         "Readable code scales teams.",
         "Tests turn fear into speed.",
@@ -318,9 +329,11 @@ def build_metrics_block() -> str:
             f"Top Editor: {top_editor.get('name', 'N/A')} ({float(top_editor.get('percent', 0) or 0):.2f}%)",
         )
     )
+    lines.append(f"WakaTime (last 7d): {total_display} total")
+    lines.append(f"Daily Average: {daily_display}")
     lines.append(
         two_col(
-            f"WakaTime (last 7d): {total_display} total · {daily_display} daily avg",
+            "",
             f"Peak Time: {peak_time_name} ({(peak_time_value / week_total * 100) if week_total else 0:.2f}%)",
         )
     )
@@ -333,13 +346,16 @@ def build_metrics_block() -> str:
     lines.append("")
     lines.append(" Languages")
 
-    for i, language in enumerate(langs[:MAX_LANGUAGES]):
-        name = str(language.get("name", "Unknown"))
-        pct = float(language.get("percent", 0) or 0)
-        sec = float(language.get("total_seconds", 0) or 0)
-        quote = language_quotes[i] if i < len(language_quotes) else ""
-        left = format_metric_row(name, pct, sec)
-        lines.append(two_col(left, quote))
+    if langs:
+        for i, language in enumerate(langs[:MAX_LANGUAGES]):
+            name = str(language.get("name", "Unknown"))
+            pct = float(language.get("percent", 0) or 0)
+            sec = float(language.get("total_seconds", 0) or 0)
+            quote = language_quotes[i] if i < len(language_quotes) else ""
+            left = format_metric_row(name, pct, sec)
+            lines.append(two_col(left, quote))
+    else:
+        lines.append(" No language activity returned by WakaTime in the last 7 days.")
 
     lines.append("")
     lines.append("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
@@ -371,21 +387,27 @@ def build_metrics_block() -> str:
     lines.append("")
     lines.append(" Editors and Operating Systems")
     lines.append(" Editors")
-    for row in editors[:MAX_EDITORS_OR_OS]:
-        name = str(row.get("name", "Unknown"))
-        pct = float(row.get("percent", 0) or 0)
-        sec = float(row.get("total_seconds", 0) or 0)
-        note = platform_note(name)
-        left = format_metric_row(name, pct, sec)
-        lines.append(two_col(left, note))
+    if editors:
+        for row in editors[:MAX_EDITORS_OR_OS]:
+            name = str(row.get("name", "Unknown"))
+            pct = float(row.get("percent", 0) or 0)
+            sec = float(row.get("total_seconds", 0) or 0)
+            note = platform_note(name)
+            left = format_metric_row(name, pct, sec)
+            lines.append(two_col(left, note))
+    else:
+        lines.append(" No editor activity returned by WakaTime.")
     lines.append(" Operating Systems")
-    for row in oses[:MAX_EDITORS_OR_OS]:
-        name = str(row.get("name", "Unknown"))
-        pct = float(row.get("percent", 0) or 0)
-        sec = float(row.get("total_seconds", 0) or 0)
-        note = platform_note(name)
-        left = format_metric_row(name, pct, sec)
-        lines.append(two_col(left, note))
+    if oses:
+        for row in oses[:MAX_EDITORS_OR_OS]:
+            name = str(row.get("name", "Unknown"))
+            pct = float(row.get("percent", 0) or 0)
+            sec = float(row.get("total_seconds", 0) or 0)
+            note = platform_note(name)
+            left = format_metric_row(name, pct, sec)
+            lines.append(two_col(left, note))
+    else:
+        lines.append(" No operating system activity returned by WakaTime.")
 
     timestamp = datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S %Z")
     lines.append("")

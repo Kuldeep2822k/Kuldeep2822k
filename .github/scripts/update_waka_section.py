@@ -91,6 +91,10 @@ def two_col(left: str, right: str, width: int = 60) -> str:
     return f"{left:<{width}} | {right}" if right else left
 
 
+def right_col(text: str, width: int = 60) -> str:
+    return f"{'':<{width}} | {text}"
+
+
 def fmt_hours(seconds: float) -> str:
     return f"{seconds / 3600:.2f} h"
 
@@ -331,14 +335,9 @@ def build_metrics_block() -> str:
     )
     lines.append(f"WakaTime (last 7d): {total_display} total")
     lines.append(f"Daily Average: {daily_display}")
-    lines.append(
-        two_col(
-            "",
-            f"Peak Time: {peak_time_name} ({(peak_time_value / week_total * 100) if week_total else 0:.2f}%)",
-        )
-    )
-    lines.append(two_col("", f"Peak Day : {peak_day_name} ({(peak_day_value / week_total * 100) if week_total else 0:.2f}%)"))
-    lines.append(two_col("", f"Activity : {activity_chunks} chunks"))
+    lines.append(right_col(f"Peak Time: {peak_time_name} ({(peak_time_value / week_total * 100) if week_total else 0:.2f}%)"))
+    lines.append(right_col(f"Peak Day : {peak_day_name} ({(peak_day_value / week_total * 100) if week_total else 0:.2f}%)"))
+    lines.append(right_col(f"Activity : {activity_chunks} chunks"))
     lines.append("")
     lines.append("Stats & Proficiency")
     lines.append("")

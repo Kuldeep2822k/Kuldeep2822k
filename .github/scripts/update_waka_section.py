@@ -177,7 +177,7 @@ def derive_top_repo_language(repos: list[dict[str, Any]]) -> dict[str, Any]:
         return {"name": "N/A", "percent": 0.0}
     top_name, top_count = language_counts.most_common(1)[0]
     total = sum(language_counts.values())
-    percent = (top_count / total * 100) if total else 0.0
+    percent = top_count / total * 100
     return {"name": top_name, "percent": percent}
 
 
@@ -330,7 +330,7 @@ def build_metrics_block() -> str:
     )
     lines.append(
         two_col(
-            f"{repos_total} repos ({repos_public} public, {repos_private} private), {stars} stars",
+            f"{repos_total} repos ({repos_public} public, {repos_private} private) · {stars} stars",
             f"Top Editor: {top_editor.get('name', 'N/A')} ({float(top_editor.get('percent', 0) or 0):.2f}%)",
         )
     )

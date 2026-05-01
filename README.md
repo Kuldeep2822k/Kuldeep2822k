@@ -168,16 +168,16 @@ Stats & Proficiency
 ## 📈 Recent Activity
 
 <!--START_SECTION:activity-->
-1. 🗣 Commented on [#16](https://github.com/Kuldeep2822k/code/pull/16#issuecomment-4356104460) in [Kuldeep2822k/code](https://github.com/Kuldeep2822k/code)
-2. 🗣 Commented on [#20814](https://github.com/eslint/eslint/pull/20814#issuecomment-4356067736) in [eslint/eslint](https://github.com/eslint/eslint)
-3. 🗣 Commented on [#20802](https://github.com/eslint/eslint/pull/20802#issuecomment-4328937310) in [eslint/eslint](https://github.com/eslint/eslint)
-4. 💪 Opened PR [#20814](https://github.com/eslint/eslint/pull/20814) in [eslint/eslint](https://github.com/eslint/eslint)
-5. ℹ️ Reopened PR [#341](https://github.com/Kuldeep2822k/aqua-ai/pull/341) in [Kuldeep2822k/aqua-ai](https://github.com/Kuldeep2822k/aqua-ai)
-6. ❌ Closed PR [#341](https://github.com/Kuldeep2822k/aqua-ai/pull/341) in [Kuldeep2822k/aqua-ai](https://github.com/Kuldeep2822k/aqua-ai)
-7. 🗣 Commented on [#20701](https://github.com/eslint/eslint/pull/20701#issuecomment-4322894083) in [eslint/eslint](https://github.com/eslint/eslint)
-8. 💪 Opened PR [#20802](https://github.com/eslint/eslint/pull/20802) in [eslint/eslint](https://github.com/eslint/eslint)
-9. 🎉 Merged PR [#20797](https://github.com/eslint/eslint/pull/20797) in [eslint/eslint](https://github.com/eslint/eslint)
-10. 🗣 Commented on [#20786](https://github.com/eslint/eslint/pull/20786#issuecomment-4320187316) in [eslint/eslint](https://github.com/eslint/eslint)
+1. 🎉 Merged PR [#3](https://github.com/Kuldeep2822k/devops-mastery-curriculum/pull/3) in [Kuldeep2822k/devops-mastery-curriculum](https://github.com/Kuldeep2822k/devops-mastery-curriculum)
+2. ℹ️ Assigned PR [#3](https://github.com/Kuldeep2822k/devops-mastery-curriculum/pull/3) in [Kuldeep2822k/devops-mastery-curriculum](https://github.com/Kuldeep2822k/devops-mastery-curriculum)
+3. ℹ️ Assigned PR [#3](https://github.com/Kuldeep2822k/devops-mastery-curriculum/pull/3) in [Kuldeep2822k/devops-mastery-curriculum](https://github.com/Kuldeep2822k/devops-mastery-curriculum)
+4. ℹ️ Assigned PR [#3](https://github.com/Kuldeep2822k/devops-mastery-curriculum/pull/3) in [Kuldeep2822k/devops-mastery-curriculum](https://github.com/Kuldeep2822k/devops-mastery-curriculum)
+5. 💪 Opened PR [#3](https://github.com/Kuldeep2822k/devops-mastery-curriculum/pull/3) in [Kuldeep2822k/devops-mastery-curriculum](https://github.com/Kuldeep2822k/devops-mastery-curriculum)
+6. ❌ Closed PR [#2](https://github.com/Kuldeep2822k/devops-mastery-curriculum/pull/2) in [Kuldeep2822k/devops-mastery-curriculum](https://github.com/Kuldeep2822k/devops-mastery-curriculum)
+7. 💪 Opened PR [#2](https://github.com/Kuldeep2822k/devops-mastery-curriculum/pull/2) in [Kuldeep2822k/devops-mastery-curriculum](https://github.com/Kuldeep2822k/devops-mastery-curriculum)
+8. 🎉 Merged PR [#1](https://github.com/Kuldeep2822k/devops-mastery-curriculum/pull/1) in [Kuldeep2822k/devops-mastery-curriculum](https://github.com/Kuldeep2822k/devops-mastery-curriculum)
+9. 💪 Opened PR [#1](https://github.com/Kuldeep2822k/devops-mastery-curriculum/pull/1) in [Kuldeep2822k/devops-mastery-curriculum](https://github.com/Kuldeep2822k/devops-mastery-curriculum)
+10. 💪 Opened PR [#1094](https://github.com/ramitsurana/awesome-kubernetes/pull/1094) in [ramitsurana/awesome-kubernetes](https://github.com/ramitsurana/awesome-kubernetes)
 <!--END_SECTION:activity-->
 
 ---

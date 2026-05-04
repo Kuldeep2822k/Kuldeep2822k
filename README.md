@@ -13,7 +13,7 @@
 
 I build data-driven products across **full-stack web**, **data pipelines**, and **DevOps** — focusing on real-world problems where good data and UX matter.
 
-🌐 **Portfolio:** https://kuldeep2822k.vercel.app/
+🌐 **Portfolio:** [kuldeep2822k.vercel.app](https://kuldeep2822k.vercel.app/)
 
 ---
 

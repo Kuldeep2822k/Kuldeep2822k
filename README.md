@@ -168,16 +168,16 @@ Stats & Proficiency
 ## 📈 Recent Activity
 
 <!--START_SECTION:activity-->
-1. 🗣 Commented on [#20834](https://github.com/eslint/eslint/pull/20834#issuecomment-4366383521) in [eslint/eslint](https://github.com/eslint/eslint)
-2. 🗣 Commented on [#20834](https://github.com/eslint/eslint/pull/20834#issuecomment-4364807796) in [eslint/eslint](https://github.com/eslint/eslint)
-3. 💪 Opened PR [#20835](https://github.com/eslint/eslint/pull/20835) in [eslint/eslint](https://github.com/eslint/eslint)
-4. 💪 Opened PR [#20834](https://github.com/eslint/eslint/pull/20834) in [eslint/eslint](https://github.com/eslint/eslint)
-5. ❌ Closed PR [#20833](https://github.com/eslint/eslint/pull/20833) in [eslint/eslint](https://github.com/eslint/eslint)
-6. 💪 Opened PR [#20833](https://github.com/eslint/eslint/pull/20833) in [eslint/eslint](https://github.com/eslint/eslint)
-7. ❌ Closed PR [#20832](https://github.com/eslint/eslint/pull/20832) in [eslint/eslint](https://github.com/eslint/eslint)
-8. 💪 Opened PR [#20832](https://github.com/eslint/eslint/pull/20832) in [eslint/eslint](https://github.com/eslint/eslint)
-9. 🎉 Merged PR [#3](https://github.com/Kuldeep2822k/devops-mastery-curriculum/pull/3) in [Kuldeep2822k/devops-mastery-curriculum](https://github.com/Kuldeep2822k/devops-mastery-curriculum)
-10. ℹ️ Assigned PR [#3](https://github.com/Kuldeep2822k/devops-mastery-curriculum/pull/3) in [Kuldeep2822k/devops-mastery-curriculum](https://github.com/Kuldeep2822k/devops-mastery-curriculum)
+1. 🎉 Merged PR [#20835](https://github.com/eslint/eslint/pull/20835) in [eslint/eslint](https://github.com/eslint/eslint)
+2. 🗣 Commented on [#20834](https://github.com/eslint/eslint/pull/20834#issuecomment-4366383521) in [eslint/eslint](https://github.com/eslint/eslint)
+3. 🗣 Commented on [#20834](https://github.com/eslint/eslint/pull/20834#issuecomment-4364807796) in [eslint/eslint](https://github.com/eslint/eslint)
+4. 💪 Opened PR [#20835](https://github.com/eslint/eslint/pull/20835) in [eslint/eslint](https://github.com/eslint/eslint)
+5. 💪 Opened PR [#20834](https://github.com/eslint/eslint/pull/20834) in [eslint/eslint](https://github.com/eslint/eslint)
+6. ❌ Closed PR [#20833](https://github.com/eslint/eslint/pull/20833) in [eslint/eslint](https://github.com/eslint/eslint)
+7. 💪 Opened PR [#20833](https://github.com/eslint/eslint/pull/20833) in [eslint/eslint](https://github.com/eslint/eslint)
+8. ❌ Closed PR [#20832](https://github.com/eslint/eslint/pull/20832) in [eslint/eslint](https://github.com/eslint/eslint)
+9. 💪 Opened PR [#20832](https://github.com/eslint/eslint/pull/20832) in [eslint/eslint](https://github.com/eslint/eslint)
+10. 🎉 Merged PR [#3](https://github.com/Kuldeep2822k/devops-mastery-curriculum/pull/3) in [Kuldeep2822k/devops-mastery-curriculum](https://github.com/Kuldeep2822k/devops-mastery-curriculum)
 <!--END_SECTION:activity-->
 
 ---

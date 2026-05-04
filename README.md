@@ -168,16 +168,16 @@ Stats & Proficiency
 ## 📈 Recent Activity
 
 <!--START_SECTION:activity-->
-1. 🎉 Merged PR [#14](https://github.com/Kuldeep2822k/Kuldeep2822k/pull/14) in [Kuldeep2822k/Kuldeep2822k](https://github.com/Kuldeep2822k/Kuldeep2822k)
-2. 🗣 Commented on [#346](https://github.com/Kuldeep2822k/aqua-ai/pull/346#issuecomment-4372204646) in [Kuldeep2822k/aqua-ai](https://github.com/Kuldeep2822k/aqua-ai)
-3. 💪 Opened PR [#14](https://github.com/Kuldeep2822k/Kuldeep2822k/pull/14) in [Kuldeep2822k/Kuldeep2822k](https://github.com/Kuldeep2822k/Kuldeep2822k)
-4. 🎉 Merged PR [#332](https://github.com/Kuldeep2822k/aqua-ai/pull/332) in [Kuldeep2822k/aqua-ai](https://github.com/Kuldeep2822k/aqua-ai)
-5. 💪 Opened PR [#20838](https://github.com/eslint/eslint/pull/20838) in [eslint/eslint](https://github.com/eslint/eslint)
-6. 🎉 Merged PR [#20835](https://github.com/eslint/eslint/pull/20835) in [eslint/eslint](https://github.com/eslint/eslint)
-7. 🗣 Commented on [#20834](https://github.com/eslint/eslint/pull/20834#issuecomment-4366383521) in [eslint/eslint](https://github.com/eslint/eslint)
-8. 🗣 Commented on [#20834](https://github.com/eslint/eslint/pull/20834#issuecomment-4364807796) in [eslint/eslint](https://github.com/eslint/eslint)
-9. 💪 Opened PR [#20835](https://github.com/eslint/eslint/pull/20835) in [eslint/eslint](https://github.com/eslint/eslint)
-10. 💪 Opened PR [#20834](https://github.com/eslint/eslint/pull/20834) in [eslint/eslint](https://github.com/eslint/eslint)
+1. 🗣 Commented on [#346](https://github.com/Kuldeep2822k/aqua-ai/pull/346#issuecomment-4372399850) in [Kuldeep2822k/aqua-ai](https://github.com/Kuldeep2822k/aqua-ai)
+2. 🎉 Merged PR [#14](https://github.com/Kuldeep2822k/Kuldeep2822k/pull/14) in [Kuldeep2822k/Kuldeep2822k](https://github.com/Kuldeep2822k/Kuldeep2822k)
+3. 🗣 Commented on [#346](https://github.com/Kuldeep2822k/aqua-ai/pull/346#issuecomment-4372204646) in [Kuldeep2822k/aqua-ai](https://github.com/Kuldeep2822k/aqua-ai)
+4. 💪 Opened PR [#14](https://github.com/Kuldeep2822k/Kuldeep2822k/pull/14) in [Kuldeep2822k/Kuldeep2822k](https://github.com/Kuldeep2822k/Kuldeep2822k)
+5. 🎉 Merged PR [#332](https://github.com/Kuldeep2822k/aqua-ai/pull/332) in [Kuldeep2822k/aqua-ai](https://github.com/Kuldeep2822k/aqua-ai)
+6. 💪 Opened PR [#20838](https://github.com/eslint/eslint/pull/20838) in [eslint/eslint](https://github.com/eslint/eslint)
+7. 🎉 Merged PR [#20835](https://github.com/eslint/eslint/pull/20835) in [eslint/eslint](https://github.com/eslint/eslint)
+8. 🗣 Commented on [#20834](https://github.com/eslint/eslint/pull/20834#issuecomment-4366383521) in [eslint/eslint](https://github.com/eslint/eslint)
+9. 🗣 Commented on [#20834](https://github.com/eslint/eslint/pull/20834#issuecomment-4364807796) in [eslint/eslint](https://github.com/eslint/eslint)
+10. 💪 Opened PR [#20835](https://github.com/eslint/eslint/pull/20835) in [eslint/eslint](https://github.com/eslint/eslint)
 <!--END_SECTION:activity-->
 
 ---

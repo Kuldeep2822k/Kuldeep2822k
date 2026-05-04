@@ -13,7 +13,7 @@
 
 I build data-driven products across **full-stack web**, **data pipelines**, and **DevOps** — focusing on real-world problems where good data and UX matter.
 
-🌐 **Portfolio:** [master-portfolio-git-master-nicejob.vercel.app](https://master-portfolio-git-master-nicejob.vercel.app/)
+🌐 **Portfolio:** https://kuldeep2822k.vercel.app/
 
 ---
 

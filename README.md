@@ -1,6 +1,6 @@
 <!-- Animated typing header -->
 <div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=26&pause=1000&color=58A6FF&center=true&vCenter=true&width=650&lines=Hi%2C+I'm+Kuldeep+Kumar+%F0%9F%91%8B;Full-Stack+%7C+Data+%7C+DevOps+Engineer;Building+AI-Powered+Products+%F0%9F%9A%80;Open+to+Collaborate!" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=26&pause=1000&color=58A6FF&center=true&vCenter=true&width=650&lines=Hi%2C+I'm+Kuldeep+Kumar+%F0%9F%91%8B;Full-Stack+Developer+%C2%B7+Building+AI-Powered+Tools;Open+to+Collaborate!" alt="Typing SVG" />
 </div>
 
 <!-- Visitor counter + profile views badge -->
@@ -43,24 +43,24 @@ I build data-driven products across **full-stack web**, **data pipelines**, and 
 
 **Languages**
 
-![TypeScript](https://img.shields.io/badge/TypeScript-★★★★★-3178C6?style=flat-square&logo=typescript&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-★★★★★-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
-![Python](https://img.shields.io/badge/Python-★★★★☆-3776AB?style=flat-square&logo=python&logoColor=white)
-![SQL](https://img.shields.io/badge/SQL-★★★★☆-4169E1?style=flat-square&logo=postgresql&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![SQL](https://img.shields.io/badge/SQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
 
 **Web & APIs**
 
-![React](https://img.shields.io/badge/React-★★★★★-61DAFB?style=flat-square&logo=react&logoColor=black)
-![Next.js](https://img.shields.io/badge/Next.js-★★★★☆-000000?style=flat-square&logo=nextdotjs&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-★★★★★-339933?style=flat-square&logo=nodedotjs&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FastAPI-★★★★☆-009688?style=flat-square&logo=fastapi&logoColor=white)
+![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
 
 **AI / Data / DevOps**
 
-![LangChain](https://img.shields.io/badge/LangChain-★★★★☆-1C3C3C?style=flat-square&logo=chainlink&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-★★★★☆-2496ED?style=flat-square&logo=docker&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-★★★★☆-4169E1?style=flat-square&logo=postgresql&logoColor=white)
-![Redis](https://img.shields.io/badge/Redis-★★★☆☆-DC382D?style=flat-square&logo=redis&logoColor=white)
+![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=flat-square&logo=chainlink&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
+![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white)
 
 ---
 
@@ -70,7 +70,7 @@ I build data-driven products across **full-stack web**, **data pipelines**, and 
 | :--- | :--- | :--- |
 | **[Aqua‑AI](https://github.com/Kuldeep2822k/aqua-ai)** | Platform ingesting public water-quality data to visualize insights on a map/dashboard with analytics. | ![React](https://img.shields.io/badge/-React-black?logo=react) ![Node](https://img.shields.io/badge/-Node-black?logo=nodedotjs) ![Postgres](https://img.shields.io/badge/-Postgres-black?logo=postgresql) |
 | **[Content Studio Agent](https://github.com/Kuldeep2822k/content-studio-agent)** | AI writing agent with end-to-end workflow (research → outline → draft) and style memory. | ![Python](https://img.shields.io/badge/-Python-black?logo=python) ![FastAPI](https://img.shields.io/badge/-FastAPI-black?logo=fastapi) ![AI](https://img.shields.io/badge/-AI-black?logo=openai) |
-| **[Indian Meal Calculator](https://github.com/Kuldeep2822k/code)** | Nutrition planner for Indian foods with barcode scanning and free API search. | ![JS](https://img.shields.io/badge/-JS-black?logo=javascript) ![HTML](https://img.shields.io/badge/-HTML-black?logo=html5) |
+| **[Indian Meal Calculator](https://github.com/Kuldeep2822k/indian-meal-calculator)** | Nutrition planner for Indian foods with barcode scanning and free API search. | ![JS](https://img.shields.io/badge/-JS-black?logo=javascript) ![HTML](https://img.shields.io/badge/-HTML-black?logo=html5) |
 
 ---
 
@@ -188,14 +188,6 @@ I actively contribute to and build open-source tools, especially in the **AI/dat
 
 - 🛠️ Open to collaborating on **AI agents**, **geospatial data**, or **developer productivity** projects
 - 📬 Reach out if you're building something meaningful — I'm happy to review PRs, open issues, or co-build
-
----
-
-## ⚡ Philosophy
-
-- **End-to-end mindset**: Taking features from ingestion → storage → API → UI.
-- **Quality loop**: Automated checks (tests/scans) and iterative refactors.
-- **Documentation**: Clear READMEs make projects accessible.
 
 ---
 

@@ -168,16 +168,16 @@ Stats & Proficiency
 ## 📈 Recent Activity
 
 <!--START_SECTION:activity-->
-1. 🗣 Commented on [#20844](https://github.com/eslint/eslint/issues/20844#issuecomment-4407387412) in [eslint/eslint](https://github.com/eslint/eslint)
-2. ❌ Closed PR [#8](https://github.com/Kuldeep2822k/code/pull/8) in [Kuldeep2822k/code](https://github.com/Kuldeep2822k/code)
-3. 🗣 Commented on [#20844](https://github.com/eslint/eslint/issues/20844#issuecomment-4385884973) in [eslint/eslint](https://github.com/eslint/eslint)
-4. 🗣 Commented on [#346](https://github.com/Kuldeep2822k/aqua-ai/pull/346#issuecomment-4379946700) in [Kuldeep2822k/aqua-ai](https://github.com/Kuldeep2822k/aqua-ai)
-5. 🗣 Commented on [#348](https://github.com/Kuldeep2822k/aqua-ai/pull/348#issuecomment-4379087294) in [Kuldeep2822k/aqua-ai](https://github.com/Kuldeep2822k/aqua-ai)
-6. 🗣 Commented on [#346](https://github.com/Kuldeep2822k/aqua-ai/pull/346#issuecomment-4379084637) in [Kuldeep2822k/aqua-ai](https://github.com/Kuldeep2822k/aqua-ai)
-7. ℹ️ Labeled issue [#20844](https://github.com/eslint/eslint/issues/20844) in [eslint/eslint](https://github.com/eslint/eslint)
+1. ❌ Closed PR [#20](https://github.com/Kuldeep2822k/eslint/pull/20) in [Kuldeep2822k/eslint](https://github.com/Kuldeep2822k/eslint)
+2. 🗣 Commented on [#20844](https://github.com/eslint/eslint/issues/20844#issuecomment-4407387412) in [eslint/eslint](https://github.com/eslint/eslint)
+3. ❌ Closed PR [#8](https://github.com/Kuldeep2822k/code/pull/8) in [Kuldeep2822k/code](https://github.com/Kuldeep2822k/code)
+4. 🗣 Commented on [#20844](https://github.com/eslint/eslint/issues/20844#issuecomment-4385884973) in [eslint/eslint](https://github.com/eslint/eslint)
+5. 🗣 Commented on [#346](https://github.com/Kuldeep2822k/aqua-ai/pull/346#issuecomment-4379946700) in [Kuldeep2822k/aqua-ai](https://github.com/Kuldeep2822k/aqua-ai)
+6. 🗣 Commented on [#348](https://github.com/Kuldeep2822k/aqua-ai/pull/348#issuecomment-4379087294) in [Kuldeep2822k/aqua-ai](https://github.com/Kuldeep2822k/aqua-ai)
+7. 🗣 Commented on [#346](https://github.com/Kuldeep2822k/aqua-ai/pull/346#issuecomment-4379084637) in [Kuldeep2822k/aqua-ai](https://github.com/Kuldeep2822k/aqua-ai)
 8. ℹ️ Labeled issue [#20844](https://github.com/eslint/eslint/issues/20844) in [eslint/eslint](https://github.com/eslint/eslint)
-9. ❗ Opened issue [#20844](https://github.com/eslint/eslint/issues/20844) in [eslint/eslint](https://github.com/eslint/eslint)
-10. 🗣 Commented on [#346](https://github.com/Kuldeep2822k/aqua-ai/pull/346#issuecomment-4376637395) in [Kuldeep2822k/aqua-ai](https://github.com/Kuldeep2822k/aqua-ai)
+9. ℹ️ Labeled issue [#20844](https://github.com/eslint/eslint/issues/20844) in [eslint/eslint](https://github.com/eslint/eslint)
+10. ❗ Opened issue [#20844](https://github.com/eslint/eslint/issues/20844) in [eslint/eslint](https://github.com/eslint/eslint)
 <!--END_SECTION:activity-->
 
 ---
